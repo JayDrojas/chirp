@@ -1,4 +1,4 @@
-<h1 align="center">🚕 Chirp 🚕</h1>
+<h1 align="center">🐦 Chirp 🐦</h1>
 
 <h5 align="center">  By:  <a href="https://github.com/Jared-Kunhart">Damian Rojas</a> - <a href="https://app-chirp-jd.herokuapp.com/login"><i>Live site</i></h5>
 
