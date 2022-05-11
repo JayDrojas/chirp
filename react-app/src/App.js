@@ -8,7 +8,8 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
-import Tweets from './components/Tweets/Tweets';
+import Home from './components/Home'
+import SplashPage from './components/SplashPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -26,16 +27,13 @@ function App() {
   if (!loaded) {
     return null;
   }
-
+  // { user ? <Redirect to="/main" /> : <LoginForm />}
   return (
     <BrowserRouter>
-      <NavBar />
+      {user ? <NavBar /> : <></>}
       <Switch>
-        <Route path='/login' exact={true}>
-          { user ? <Redirect to="/main" /> : <LoginForm />}
-        </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
+        <Route path='/' exact={true}>
+          { user ? <Redirect to="/home" /> : <SplashPage />}
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
@@ -43,12 +41,8 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
-        <ProtectedRoute path='/main' exact={true} >
-          <h1> Main Page</h1>
-          <Tweets />
+        <ProtectedRoute path='/home' exact={true} >
+          <Home />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
