@@ -21,5 +21,6 @@ class Tweet(db.Model):
       'id': self.id,
       'user_id': self.user_id,
       'content': self.content,
-      'created_at': self.created_at
+      'created_at': self.created_at,
+      'user': self.user.to_dict()
     }
