@@ -10,6 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import Home from './components/Home'
 import SplashPage from './components/SplashPage';
+import Tweet from './components/Tweets/Tweet';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -35,14 +36,17 @@ function App() {
         <Route path='/' exact={true}>
           { user ? <Redirect to="/home" /> : <SplashPage />}
         </Route>
+        <ProtectedRoute path='/home' exact={true} >
+          <Home />
+        </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/home' exact={true} >
-          <Home />
+        <ProtectedRoute path='/chirps/:chirpId' exact={true} >
+          <Tweet />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

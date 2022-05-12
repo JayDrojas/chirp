@@ -1,23 +1,33 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 import { get_all_tweets } from "../../store/tweets"
-import Tweet from "./Tweet"
 
 const Tweets = () => {
   const dispatch = useDispatch()
   const tweets = useSelector(store => Object.values(store.tweets))
 
-  // console.log(tweets)
+  const editTweet = (e) => {
+    e.preventDefault()
+    console.log("clicked edit tweet")
+  }
 
   useEffect(() => {
     dispatch(get_all_tweets())
   }, [dispatch])
 
-  // <h1>These should be tweets</h1>
   return (
     <div>
       {tweets && tweets.map(tweet => (
-        <Tweet tweet={tweet} />
+        <Link to={`/chirps/${tweet.id}`}>
+          <div className="tweet-container">
+            <p>{tweet.content}</p>
+            <p>username : {tweet.user.username}</p>
+            <div>
+              <span onClick={editTweet}>...</span>
+            </div>
+          </div>
+        </Link>
       ))}
     </div>
   )

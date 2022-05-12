@@ -14,7 +14,7 @@ const get_one = (tweet) => ({
   tweet
 })
 
-const create_tweet = (tweet) => ({
+const create_one = (tweet) => ({
   type: CREATE_ONE_TWEET,
   tweet
 })
@@ -24,19 +24,75 @@ const update = (tweet) => ({
   tweet
 })
 
-const delete_one = (tweet) => ({
+const delete_one = (id) => ({
   type: DELETE_ONE_TWEET,
-  tweet
+  id
 })
+
+export const delete_one_tweet = (tweet) => async(dispatch) => {
+  const response = await fetch(`/api/tweets/${tweet.id}`, { method: 'DELETE'})
+
+  if(response.ok) {
+    dispatch(delete_one(tweet.id))
+  } else {
+    return "ERROR AT DELETE ONE THUNK"
+  }
+}
+
 
 export const get_all_tweets = () => async(dispatch) => {
   const response = await fetch("/api/tweets/")
   if(response.ok) {
     const tweets = await response.json()
-    console.log(tweets)
     dispatch(all_tweets(tweets.tweets))
   } else {
     return "ERROR AT GET_ALL_TWEETS THUNK"
+  }
+}
+
+export const create_tweet = (tweet) => async(dispatch) => {
+  const response = await fetch("/api/tweets/", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(tweet)
+  })
+  if(response.ok) {
+    const tweet = await response.json()
+    dispatch(create_one(tweet))
+  } else {
+    return "ERROR AT CREATE_TWEET THUNK"
+  }
+}
+
+export const get_one_tweet = (id) => async(dispatch) => {
+  const response = await fetch(`/api/tweets/${id}`)
+
+  if(response.ok) {
+    const tweet = await response.json()
+    dispatch(get_one(tweet))
+  } else {
+    return"ERROR AT GET_ONE_TWEET THUNK"
+  }
+}
+
+export const update_one_tweet = (tweet) => async(dispatch) => {
+  const response = await fetch(`/api/tweets/${tweet.id}`, {
+    method: "PUT",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(tweet)
+  })
+
+  if(response.ok) {
+    const updatedTweet = await response.json()
+    dispatch(update(updatedTweet))
+  } else {
+    return 'ERROR ON UPDATE_ONE_TWEET THUNK'
   }
 }
 
@@ -47,7 +103,22 @@ const tweet_reducer = (state = {}, action) => {
       newState = {}
       action.tweets.forEach(tweet => newState[tweet.id] =tweet)
       return newState
-
+    case CREATE_ONE_TWEET:
+      newState = {...state}
+      newState[action.tweet.id] = action.tweet
+      return newState
+    case GET_ONE_TWEET:
+      newState = {...state}
+      newState[action.tweet.id] = action.tweet
+      return newState
+    case UPDATE_ONE_TWEET:
+      newState = {...state}
+      newState[action.tweet.id] = {...action.tweet}
+      return newState
+    case DELETE_ONE_TWEET:
+      newState = {...state}
+      delete newState[action.id]
+      return newState
     default:
       return state
   }
