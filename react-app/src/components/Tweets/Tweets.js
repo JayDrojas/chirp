@@ -2,15 +2,13 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { get_all_tweets } from "../../store/tweets"
+import EditTweetModal from "./EditTweetModal";
+import DeleteTweetModal from "./DeleteTweetModal";
 
 const Tweets = () => {
   const dispatch = useDispatch()
   const tweets = useSelector(store => Object.values(store.tweets))
-
-  const editTweet = (e) => {
-    e.preventDefault()
-    console.log("clicked edit tweet")
-  }
+  const user = useSelector(store => store.session.user)
 
   useEffect(() => {
     dispatch(get_all_tweets())
@@ -19,15 +17,18 @@ const Tweets = () => {
   return (
     <div>
       {tweets && tweets.map(tweet => (
-        <Link to={`/chirps/${tweet.id}`}>
-          <div className="tweet-container">
-            <p>{tweet.content}</p>
-            <p>username : {tweet.user.username}</p>
+        <div className="tweet-container">
+          <Link to={`/chirps/${tweet.id}`}>
             <div>
-              <span onClick={editTweet}>...</span>
+              <p>{tweet.content}</p>
+              <p>username : {tweet.user.username}</p>
             </div>
-          </div>
-        </Link>
+          </Link>
+          {user?.id === tweet?.user_id && (<div>
+            <EditTweetModal tweet={tweet} />
+            <DeleteTweetModal tweet={tweet} />
+          </div>)}
+        </div>
       ))}
     </div>
   )
