@@ -1,10 +1,9 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { useState } from 'react'
 import { update_one_tweet } from '../../store/tweets'
 
 
 const EditTweetForm = ({ tweet, close }) => {
-  const user = useSelector(state => state.session.user)
   const dispatch = useDispatch()
   const [errors, setErrors] = useState();
   const [content, setContent] = useState(tweet?.content);
@@ -16,7 +15,6 @@ const EditTweetForm = ({ tweet, close }) => {
     const tweetErrors = []
     if (content.length <= 0) tweetErrors.push('Chirp can\'t be empty.')
     if (content.length > 255) tweetErrors.push('Chirp can\'t be more than 255 characters long.')
-
     if (tweetErrors.length) return setErrors(tweetErrors)
 
     tweet.content = content;
