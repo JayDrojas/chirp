@@ -1,3 +1,4 @@
+from app.models import reply
 from .db import db
 from sqlalchemy.sql import func
 
@@ -22,5 +23,6 @@ class Tweet(db.Model):
       'user_id': self.user_id,
       'content': self.content,
       'created_at': self.created_at,
-      'user': self.user.to_dict()
+      'user': self.user.to_dict(),
+      # 'replies': {reply.id: reply.to_dict() for reply in self.replies }
     }

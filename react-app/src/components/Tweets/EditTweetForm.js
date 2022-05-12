@@ -27,7 +27,7 @@ const EditTweetForm = ({ tweet, close }) => {
     <form onSubmit={handleEditTweet}>
       <div>
         {errors?.map(error => (
-          <p>{error}</p>
+          <p key={error}>{error}</p>
         ))}
         <label htmlFor="content">Content</label>
         <textarea

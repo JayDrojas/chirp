@@ -5,6 +5,8 @@ import { get_one_tweet } from "../../store/tweets";
 import 'reactjs-popup/dist/index.css';
 import EditTweetModal from "./EditTweetModal";
 import DeleteTweetModal from "./DeleteTweetModal";
+import CreateReplyForm from "../Replies/CreateReplyForm";
+import Replies from "../Replies/Replies"
 
 const Tweet = () => {
   const { chirpId } = useParams()
@@ -28,6 +30,10 @@ const Tweet = () => {
             <DeleteTweetModal tweet={tweet} />
           </>
         )}
+      </div>
+      <CreateReplyForm tweet={tweet} />
+      <div>
+        <Replies />
       </div>
     </div>
   )
