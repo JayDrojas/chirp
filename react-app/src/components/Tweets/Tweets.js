@@ -24,7 +24,8 @@ const Tweets = () => {
               <p>username : {tweet.user.username}</p>
             </div>
           </Link>
-          {user?.id === tweet?.user_id && (<div>
+          {user?.id === tweet?.user_id && (
+          <div>
             <EditTweetModal tweet={tweet} />
             <DeleteTweetModal tweet={tweet} />
           </div>)}

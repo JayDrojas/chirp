@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { create_reply } from "../../store/replies";
+import { update_one_reply } from "../../store/replies";
 
-const CreateReplyForm = ({tweet}) => {
-  const user = useSelector(state => state.session.user)
+const EditReplyForm = ({reply, close}) => {
   const dispatch = useDispatch()
-  const [content, setContent] = useState();
+  const [content, setContent] = useState(reply?.content);
   const [errors, setErrors] = useState();
 
   const handleSubmit = (e) => {
@@ -18,31 +17,27 @@ const CreateReplyForm = ({tweet}) => {
 
     if(tweetErrors.length) return setErrors(tweetErrors)
 
-    const newReply = {
-      content,
-      user_id: user.id,
-      tweet_id: tweet?.id
-    }
+    reply.content = content;
 
-    dispatch(create_reply(newReply))
+    dispatch(update_one_reply(reply))
     setContent('')
     setErrors([])
+    close()
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="content">Create Reply</label>
+      <label htmlFor="content">Content</label>
       <textarea
         name="content"
         type="text"
-        placeholder="Chirp your reply"
         value={content}
         onChange={(e) => setContent(e.target.value)}
         required={true}
       />
-      <button type="submit">Reply</button>
+      <button type="submit">Edit Reply</button>
     </form>
   )
 }
 
-export default CreateReplyForm;
+export default EditReplyForm;
