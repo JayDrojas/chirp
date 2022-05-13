@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import Blueprint, jsonify, request
-from app.models import Tweet, User, db
+from app.models import Tweet, User, Reply, db
 from app.forms import Create_tweet_form, Update_tweet_form
 
 tweet_routes = Blueprint('tweets', __name__)
@@ -48,3 +48,9 @@ def delete_tweet(id):
   db.session.delete(tweet)
   db.session.commit()
   return 'Success'
+
+@tweet_routes.route('/<int:id>/replies/')
+def get_replies(id):
+  replies = Reply.query.filter(Reply.tweet_id == id).all()
+  reply_list = [reply.to_dict() for reply in replies]
+  return {'replies': reply_list}

@@ -17,14 +17,15 @@ const Tweets = () => {
   return (
     <div>
       {tweets && tweets.map(tweet => (
-        <div className="tweet-container">
+        <div key={tweet?.id} className="tweet-container">
           <Link to={`/chirps/${tweet.id}`}>
             <div>
               <p>{tweet.content}</p>
               <p>username : {tweet.user.username}</p>
             </div>
           </Link>
-          {user?.id === tweet?.user_id && (<div>
+          {user?.id === tweet?.user_id && (
+          <div>
             <EditTweetModal tweet={tweet} />
             <DeleteTweetModal tweet={tweet} />
           </div>)}
