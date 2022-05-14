@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { get_all_tweets } from "../../store/tweets"
 import EditTweetModal from "./EditTweetModal";
 import DeleteTweetModal from "./DeleteTweetModal";
+import CreateTweetForm from "./CreateTweetForm"
 
 const Tweets = () => {
   const dispatch = useDispatch()
@@ -16,6 +17,7 @@ const Tweets = () => {
 
   return (
     <div>
+      <CreateTweetForm />
       {tweets && tweets.map(tweet => (
         <div key={tweet?.id} className="tweet-container">
           <Link to={`/chirps/${tweet.id}`}>

@@ -1,20 +1,21 @@
-import LoginForm from "../auth/LoginForm";
-import SignUpForm from "../auth/SignUpForm";
+import LoginModal from "./LoginModal";
+import SignUpModal from "./SignUpModal";
+import './LoginModal.css'
 
 const SplashPage = () => {
 
   return (
-    <div>
-
-      <h1>This will be the spash page</h1>
-
+    <div className="splash-page-wrapper">
+      <div>
+        <img alt="background" src="/static/images/twitter-background.png" />
+      </div>
       <div>
         <h2>login button with modal</h2>
-        <LoginForm />
+        <LoginModal />
       </div>
       <div>
         <h2>signup button with modal</h2>
-        <SignUpForm />
+        <SignUpModal />
       </div>
     </div>
 

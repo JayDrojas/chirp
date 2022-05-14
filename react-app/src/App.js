@@ -29,7 +29,7 @@ function App() {
   // { user ? <Redirect to="/main" /> : <LoginForm />}
   return (
     <BrowserRouter>
-      {user ? <NavBar /> : <></>}
+      {/* {user ? <NavBar /> : <></>} */}
       <Switch>
         <Route path='/' exact={true}>
           { user ? <Redirect to="/home" /> : <SplashPage />}
