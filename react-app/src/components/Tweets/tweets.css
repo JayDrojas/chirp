@@ -2,3 +2,43 @@
   text-decoration: none;
   color: #fff;
 }
+
+.tweet-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.212);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.212);
+  padding: 15px 15px;
+  font-size: 15px;
+}
+
+.tweets-profile-pic {
+  width: 8%;
+}
+
+.tweet-actions-container {
+  width: 100%;
+}
+
+.tweet-div {
+  display: flex;
+}
+
+.tweet-action-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tweet-user-info-div {
+  margin-bottom: 5px;
+}
+
+.tweet-user-info-div > p {
+  font-weight: normal;
+  font-size: 15px;
+  color: #8b98A5;
+}
+
+.tweet-user-info-div > p > span {
+  font-weight: bolder;
+  color: #fff;
+}
