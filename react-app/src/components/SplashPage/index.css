@@ -55,3 +55,84 @@
 .signup-signin-container h3 {
   margin-bottom: 20px;
 }
+
+.signin-demo-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-demo-actions div {
+  margin-bottom: 5px;
+}
+
+/* Buttons need to add hover */
+
+#demo-bttn {
+  height: 40px;
+  width: 320px;
+  border-radius: 32px;
+  background-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.233);
+  color: black;
+  font-size: 18px;
+}
+
+#login-bttn {
+  height: 40px;
+  width: 320px;
+  border-radius: 32px;
+  background-color: #15202B;
+  border: 1px solid rgba(255, 255, 255, 0.233);
+  color: rgb(29, 155, 240);
+  font-size: 18px;
+}
+
+#sign-up-bttn {
+  height: 40px;
+  width: 320px;
+  border-radius: 32px;
+  background-color: rgb(29, 155, 240);;
+  border: 1px solid rgba(255, 255, 255, 0.233);
+  color: #fff;
+  font-size: 18px;
+}
+
+#demo-bttn:hover {
+  cursor: pointer;
+  background-color: rgb(172, 170, 170);
+}
+
+#login-bttn:hover {
+  cursor: pointer;
+  background-color: rgba(29, 156, 240, 0.144);
+}
+
+#sign-up-bttn:hover {
+  cursor: pointer;
+  background-color: rgb(23, 140, 218);
+}
+
+/* Buttons need to add hover */
+
+#div-or-container {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.div-or-div {
+  background-color: rgba(228, 224, 224, 0.253);
+  height: 1px;
+  width: 150px;
+}
+
+.div-or-span {
+  margin: 0px 8px;
+}
+
+.terms-div {
+  font-size: 12px;
+  width: 335px;
+  padding-top: 5px;
+  color: rgba(255, 255, 255, 0.623);
+}

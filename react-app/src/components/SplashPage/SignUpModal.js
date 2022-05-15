@@ -6,7 +6,7 @@ const SignUpModal = () => {
   return (
     <>
       <Popup
-        trigger={<button className="button"> Signup </button>}
+        trigger={<button id="sign-up-bttn" className="button"> Sign up with email </button>}
         modal
         nested
       >
