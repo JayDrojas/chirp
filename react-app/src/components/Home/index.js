@@ -1,13 +1,15 @@
-import CreateTweetForm from '../Tweets/CreateTweetForm';
+// import CreateTweetForm from '../Tweets/CreateTweetForm';
 import Tweets from '../Tweets/Tweets'
+import NavBar from '../NavBar';
+import './index.css'
 
 const Home = () => {
   return (
-    <>
-      <CreateTweetForm />
-      <h1> Main Page </h1>
+    <div className='main'>
+      <NavBar />
+      {/* <CreateTweetForm /> */}
       <Tweets />
-    </>
+    </div>
 
   )
 }

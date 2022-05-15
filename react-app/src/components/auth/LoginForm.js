@@ -31,33 +31,44 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <form id='login-form'>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
+      <div className='login-form-div'>
+        <div className='login-form-div-content'>
+          <label className='login_label' htmlFor='email'>Email</label>
+          <input
+          className="input_login"
+            name='email'
+            type='text'
+            placeholder='Email'
+            value={email}
+            onChange={updateEmail}
+          />
+        </div>
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
+      <div className='login-form-div'>
+        <div className='login-form-div-content'>
+          <label className='login_label' htmlFor='password'>Password</label>
+          <input
+          className="input_login"
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={updatePassword}
+          />
+        </div>
       </div>
+        <div className='login-form-div login-form-div-bttn-cont'>
+          <div className='submit-bttn-div' onClick={onLogin}>
+          <span className='submit-bttn-form'>Log in</span>
+          </div>
+           {/* <button type='submit'>Login</button> */}
+        </div>
     </form>
   );
 };
