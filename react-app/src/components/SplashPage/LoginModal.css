@@ -12,6 +12,10 @@
   border: none;
 }
 
+.popup-arrow {
+  color: red;
+}
+
 .popup-overlay {
   background-color: rgba(91, 112, 131, 0.4);;
 }
@@ -25,6 +29,8 @@
   font-size: 18px;
   text-align: center;
   padding: 5px;
+  padding-bottom: 40px;
+  padding-top: 10px;
 }
 
 .modal > .actions {
@@ -37,25 +43,36 @@
   cursor: pointer;
   position: absolute;
   display: block;
-  padding: 2px 5px;
+  padding: 7px 10px;
   line-height: 20px;
   left: 10px;
   top: 10px;
-  font-size: 24px;
-  background: #ffffff;
+  font-size: 34px;
+  background: transparent;
+  color: white;
   border-radius: 18px;
-  border: 1px solid #cfcece;
+  border: none;
 }
+
+.modal > .close:hover {
+  background-color: #ffffff18;
+}
+
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
   margin: 0;
   height: 100%;
   padding-bottom: 46px;
   padding-left: 80px;
   padding-right: 80px;
+}
+
+.content > h1 {
+  font-size: 31px;
 }
 
 .login-form-div {
@@ -95,4 +112,33 @@
 	width:100%;
 	height:30px;
 	padding:9px 0 0 7px;
+}
+
+.login-form-div-bttn-cont {
+  height: 150px;
+  min-width: auto;
+  max-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.submit-bttn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  /* text-align: center; */
+  background-color: #ffffff;
+  border-radius: 32px;
+  color: #15202B;
+  font-size: 17px;
+  min-width: 52px;
+  min-height: 52px;
+}
+
+.submit-bttn-div:hover {
+  cursor: pointer;
+  background-color: rgb(215, 219, 220);
 }
