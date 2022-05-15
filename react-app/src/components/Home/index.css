@@ -1,9 +1,32 @@
 .main {
   display: flex;
   flex-direction: row;
+  width: 100vw;
+  height: 100vh;
 }
 
 .splash-page-wrapper {
   display: flex;
   flex-direction: row;
+}
+
+.left-container {
+  width: 30vw;
+}
+
+.center-container {
+  width: 32vw;
+  border-left: 1px solid rgba(255, 255, 255, 0.212);
+  border-right: 1px solid rgba(255, 255, 255, 0.212);
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px 20px;
+}
+
+.right-container {
+  width: 30vh;
+}
+
+.center-container h1 {
+  font-size: 20px;
 }

@@ -6,9 +6,17 @@ import './index.css'
 const Home = () => {
   return (
     <div className='main'>
-      <NavBar />
+      <div className='left-container'>
+        <NavBar />
+      </div>
       {/* <CreateTweetForm /> */}
-      <Tweets />
+      <div className='center-container'>
+        <h1>Home</h1>
+        <Tweets />
+      </div>
+      <div className='right-container'>
+        placeholder
+      </div>
     </div>
 
   )
