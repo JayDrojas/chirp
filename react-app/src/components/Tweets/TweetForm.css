@@ -1,0 +1,59 @@
+.create-tweet-form {
+  width: 546px;
+  height: fit-content;
+  display: flex;
+  padding: 0 15px;
+  padding-top: 10px;
+}
+.create-tweet-form form {
+  width: 100%;
+}
+.create-tweet-textarea {
+  padding: 5px 5px;
+  position: relative;
+  display: block;
+  width: 90%;
+  height: auto;
+}
+
+.create-tweet-textarea textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  width:100%;
+  height: 90%;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.233);
+  font-size: 20px;
+  resize: none;
+  color: #fff;
+  overflow-y: hidden;
+}
+
+
+.create-chirp-bttn-form {
+  height: 35px;
+  width: 90px;
+  border-radius: 32px;
+  background-color: rgb(29, 155, 240);;
+  border: 1px solid rgba(255, 255, 255, 0.233);
+  color: #fff;
+  font-size: 15px;
+}
+
+.create-chirp-bttn-form:hover {
+  cursor: pointer;
+  background-color: rgb(23, 140, 218);
+}
+
+.crt-chrp-div {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0px;
+  margin-bottom: 10px;
+}

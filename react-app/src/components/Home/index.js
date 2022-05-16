@@ -11,7 +11,6 @@ const Home = () => {
       </div>
       {/* <CreateTweetForm /> */}
       <div className='center-container'>
-        <h1>Home</h1>
         <Tweets />
       </div>
       <div className='right-container'>

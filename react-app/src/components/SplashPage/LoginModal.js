@@ -9,6 +9,7 @@ const LoginModal = () => {
         trigger={<button id="login-bttn" className="button"> Sign in </button>}
         modal
         nested
+        className="login-modal"
       >
         {close => (
           <div className="modal">

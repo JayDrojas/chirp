@@ -6,6 +6,7 @@ import EditTweetModal from "./EditTweetModal";
 import DeleteTweetModal from "./DeleteTweetModal";
 import CreateTweetForm from "./CreateTweetForm"
 import './tweets.css'
+import TweetBurger from "./TweetBurger";
 
 const Tweets = () => {
   const dispatch = useDispatch()
@@ -18,6 +19,7 @@ const Tweets = () => {
 
   return (
     <div id="tweets-container">
+      <h1>Home</h1>
       <CreateTweetForm />
       {tweets && tweets.map(tweet => (
         <div key={tweet?.id} className="tweet-container">
@@ -32,8 +34,9 @@ const Tweets = () => {
                 </div>
                 {user?.id === tweet?.user_id && (
                   <div>
-                    <EditTweetModal tweet={tweet} />
-                    <DeleteTweetModal tweet={tweet} />
+                    {/* <EditTweetModal tweet={tweet} />
+                    <DeleteTweetModal tweet={tweet} /> */}
+                    <TweetBurger tweet={tweet} />
                   </div>)}
               </div>
               <Link to={`/chirps/${tweet.id}`}>

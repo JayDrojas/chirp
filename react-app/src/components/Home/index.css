@@ -1,8 +1,8 @@
 .main {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .splash-page-wrapper {
@@ -11,7 +11,11 @@
 }
 
 .left-container {
+  display: flex;
+  justify-content: flex-end;
   width: 30vw;
+  height: 100%;
+  position: sticky;
 }
 
 .center-container {
@@ -22,11 +26,12 @@
 }
 
 .center-container::-webkit-scrollbar {
-  display: none;
+  display: auto;
 }
 
 .right-container {
   width: 30vh;
+  height: 100%;
 }
 
 .center-container h1 {

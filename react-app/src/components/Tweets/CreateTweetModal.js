@@ -1,12 +1,12 @@
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import DeleteTweetForm from './DeleteTweetForm'
+import CreateTweetForm from './CreateTweetForm';
 
-const DeleteTweetModal = ({ tweet }) => {
+const CreateTweetModal = () => {
   return (
     <>
       <Popup
-        trigger={<div className="button"> Delete Tweet </div>}
+        trigger={<button className="button create-chirp-bttn"> Chirp </button>}
         modal
         nested
       >
@@ -15,9 +15,9 @@ const DeleteTweetModal = ({ tweet }) => {
             <button className="close" onClick={close}>
               &times;
             </button>
-            <div className="header"> Delete Tweet </div>
+            <div className="header"> Create </div>
             <div className="content">
-              <DeleteTweetForm tweet={tweet} close={close} />
+              <CreateTweetForm close={close} />
             </div>
           </div>
         )}
@@ -26,4 +26,4 @@ const DeleteTweetModal = ({ tweet }) => {
   )
 }
 
-export default DeleteTweetModal;
+export default CreateTweetModal;
