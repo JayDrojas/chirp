@@ -14,7 +14,7 @@ const TweetBurger = ({tweet}) => {
         closeOnDocumentClick
         nested
         className='tweet-burger'
-        contentStyle={{ padding: '0px',
+        contentStyle={{
         boxShadow:'rgb(136 153 166 / 20%) 0px 0px 15px, rgb(136 153 166 / 15%) 0px 0px 3px 1px'
       }}
         arrow={false}
