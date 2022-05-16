@@ -2,11 +2,12 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import EditTweetForm from './EditTweetForm'
 
+
 const EditTweetModal = ({tweet}) => {
   return (
     <>
       <Popup
-        trigger={<button className="button"> Edit Tweet </button>}
+        trigger={<div className="button"> Edit Tweet </div>}
         modal
         nested
       >

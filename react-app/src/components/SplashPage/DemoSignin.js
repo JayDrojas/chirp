@@ -7,7 +7,7 @@ const DemoSignin = () => {
 
   const demoHandler = async (e) => {
     e.preventDefault()
-    const data = await dispatch(login("demo@aa.io", "password"));
+    dispatch(login("demo@aa.io", "password"));
   }
 
   return (

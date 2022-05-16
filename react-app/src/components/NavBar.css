@@ -1,0 +1,45 @@
+.navbar-container {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 275px;
+  padding-left: 12px;
+  padding-right: 12px;
+  min-height: 70vh;
+}
+
+.navbar-container > div {
+  padding: 20px 0;
+  padding-left: 15px;
+}
+
+.navbar-item-div {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.navbar-item-div a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-item-div i {
+  margin-right: 20px;
+}
+
+.create-chirp-bttn {
+  height: 50px;
+  width: 90%;
+  border-radius: 32px;
+  background-color: rgb(29, 155, 240);;
+  border: 1px solid rgba(255, 255, 255, 0.233);
+  color: #fff;
+  font-size: 18px;
+}
+
+.create-chirp-bttn:hover {
+  cursor: pointer;
+  background-color: rgb(23, 140, 218);
+}

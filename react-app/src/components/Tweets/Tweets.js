@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { get_all_tweets } from "../../store/tweets"
 import EditTweetModal from "./EditTweetModal";
 import DeleteTweetModal from "./DeleteTweetModal";
 import CreateTweetForm from "./CreateTweetForm"
+import './tweets.css'
+import TweetBurger from "./TweetBurger";
 
 const Tweets = () => {
   const dispatch = useDispatch()
@@ -16,24 +18,39 @@ const Tweets = () => {
   }, [dispatch])
 
   return (
-    <div>
+    <div id="tweets-container">
+      <h1>Home</h1>
       <CreateTweetForm />
       {tweets && tweets.map(tweet => (
         <div key={tweet?.id} className="tweet-container">
-          <Link to={`/chirps/${tweet.id}`}>
-            <div>
-              <p>{tweet.content}</p>
-              <p>username : {tweet.user.username}</p>
+          {/* <Link to={`/chirps/${tweet.id}`}> */}
+          <div className="tweet-div">
+            <div className="tweets-profile-pic"><i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
             </div>
-          </Link>
-          {user?.id === tweet?.user_id && (
-          <div>
-            <EditTweetModal tweet={tweet} />
-            <DeleteTweetModal tweet={tweet} />
-          </div>)}
+            <div className="tweet-actions-container">
+              <div className="tweet-action-div">
+                <div className="tweet-user-info-div">
+                  <p><span>{tweet.user.first_name}</span> @{tweet.user.username}</p>
+                </div>
+                {user?.id === tweet?.user_id && (
+                  <div>
+                    {/* <EditTweetModal tweet={tweet} />
+                    <DeleteTweetModal tweet={tweet} /> */}
+                    <TweetBurger tweet={tweet} />
+                  </div>)}
+              </div>
+              <Link to={`/chirps/${tweet.id}`}>
+                <div className="tweet-user-content">
+                  <p>{tweet.content}</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        {/* </Link> */}
         </div>
-      ))}
-    </div>
+  ))
+}
+    </div >
   )
 }
 

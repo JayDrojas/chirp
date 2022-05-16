@@ -1,0 +1,61 @@
+.tweet-container a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#tweets-container h1 {
+  padding: 15px 15px;
+  height: fit-content;
+}
+
+.tweet-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.212);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.212);
+  padding: 15px 15px;
+  font-size: 15px;
+}
+
+.tweets-profile-pic {
+  width: 8%;
+}
+
+.tweet-actions-container {
+  width: 100%;
+}
+
+.tweet-div {
+  display: flex;
+  width: 100%;
+  /* overflow: hidden; */
+  word-wrap: break-word;
+}
+
+.tweet-action-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tweet-user-info-div {
+  margin-bottom: 5px;
+  height: fit-content;
+}
+
+.tweet-user-info-div > p {
+  font-weight: normal;
+  font-size: 15px;
+  color: #8b98A5;
+}
+
+.tweet-user-info-div > p > span {
+  font-weight: bolder;
+  color: #fff;
+}
+
+.tweet-user-content p {
+  /* overflow: hidden; */
+  height: fit-content;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
