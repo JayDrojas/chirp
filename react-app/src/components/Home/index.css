@@ -19,14 +19,11 @@
 }
 
 .center-container {
-  width: 32vw;
+  width: 34vw;
   border-left: 1px solid rgba(255, 255, 255, 0.212);
   border-right: 1px solid rgba(255, 255, 255, 0.212);
   height: 100%;
-}
-
-.center-container::-webkit-scrollbar {
-  display: auto;
+  overflow-y: visible;
 }
 
 .right-container {

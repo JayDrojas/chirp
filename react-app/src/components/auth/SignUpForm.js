@@ -7,6 +7,8 @@ const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
+  const [first_name, setFirstName] = useState();
+  const [last_name, setLastName] = useState();
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
@@ -15,7 +17,7 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, email, password, first_name, last_name));
       if (data) {
         setErrors(data)
       }
@@ -43,42 +45,68 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
+    <form>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label>User Name</label>
+      <div className='login-form-div'>
+        <div className='login-form-div-content'>
+          <input
+            className="input_login"
+            placeholder='UserName'
+            type='text'
+            name='username'
+            onChange={updateUsername}
+            value={username}
+          ></input>
+        </div>
+      </div>
+      <div className='login-form-div'>
         <input
+          className="input_login"
+          placeholder='First Name'
           type='text'
-          name='username'
-          onChange={updateUsername}
-          value={username}
+          name='first_name'
+          onChange={(e) => setFirstName(e.target.value)}
+          value={first_name}
         ></input>
       </div>
-      <div>
-        <label>Email</label>
+      <div className='login-form-div'>
         <input
+          className="input_login"
+          placeholder='Last Name'
           type='text'
-          name='email'
+          name='last_name'
+          onChange={(e) => setLastName(e.target.value)}
+          value={last_name}
+        ></input>
+      </div>
+      <div className='login-form-div'>
+        <input
+          className="input_login"
+          placeholder='Email'
+          type='text'
+          name='Email'
           onChange={updateEmail}
           value={email}
         ></input>
       </div>
-      <div>
-        <label>Password</label>
+      <div className='login-form-div'>
         <input
+          className="input_login"
+          placeholder='Password'
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
         ></input>
       </div>
-      <div>
-        <label>Repeat Password</label>
+      <div className='login-form-div'>
         <input
+          className="input_login"
+          placeholder='Repeat Password'
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
@@ -86,7 +114,9 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <button type='submit'>Sign Up</button>
+      <div id="signup-form" className='submit-bttn-div' onClick={onSignUp}>
+        <span type='submit'>Sign Up</span>
+      </div>
     </form>
   );
 };

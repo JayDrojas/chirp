@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import Home from './components/Home'
 import SplashPage from './components/SplashPage';
 import Tweet from './components/Tweets/Tweet';
+import TweetsDetail from './components/Home/tweets-detail';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -44,7 +45,8 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/chirps/:chirpId' exact={true} >
-          <Tweet />
+          <TweetsDetail />
+          {/* <Tweet /> */}
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

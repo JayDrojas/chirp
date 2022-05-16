@@ -3,6 +3,18 @@
   color: #fff;
 }
 
+#tweets-container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
 #tweets-container h1 {
   padding: 15px 15px;
   height: fit-content;
@@ -13,6 +25,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.212);
   padding: 15px 15px;
   font-size: 15px;
+  height: auto;
 }
 
 .tweets-profile-pic {
@@ -58,4 +71,8 @@
   width: 100%;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+.create-tweet-form {
+  width: 90%;
 }
