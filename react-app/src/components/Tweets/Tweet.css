@@ -1,0 +1,44 @@
+#tweet-wrapper-detail {
+  padding: 15px 15px;
+}
+
+#tweet-header-div {
+  display: flex;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+#tweet-div-detail {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#tweet-detail-usernames {
+  margin: 0px 10px;
+}
+
+#tweet-detail-usernames > p:nth-child(2) {
+  color: #8b98A5;
+  font-size: 15px;
+}
+
+#tweet-div-detail-content {
+  font-size: 20px;
+  font-weight: lighter;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.233);
+}
+
+#tweet-div-detail-content p {
+  margin: 10px 10px;
+}
+
+#tweet-div-detail-content > p:nth-child(2) {
+  color: #8b98A5;
+  font-size: 15px;
+}
+
+#myTextarea::placeholder {
+  color: #8b98A5;
+}
