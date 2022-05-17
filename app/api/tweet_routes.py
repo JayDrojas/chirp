@@ -54,3 +54,7 @@ def get_replies(id):
   replies = Reply.query.filter(Reply.tweet_id == id).all()
   reply_list = [reply.to_dict() for reply in replies]
   return {'replies': reply_list}
+
+@tweet_routes.errorhandler(500)
+def internal_server_error(e):
+    return {"errors": ["Internal Server Error"]}, 500
