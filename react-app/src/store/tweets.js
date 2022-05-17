@@ -53,17 +53,20 @@ export const get_all_tweets = () => async(dispatch) => {
 export const create_tweet = (tweet) => async(dispatch) => {
   const response = await fetch("/api/tweets/", {
     method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(tweet)
+    // headers: {
+    //   'Accept': 'application/json',
+    //   'Content-Type': 'application/json'
+    // },
+    // body: JSON.stringify(tweet)
+    body: tweet
   })
   if(response.ok) {
     const tweet = await response.json()
     dispatch(create_one(tweet))
+    return tweet
   } else {
-    return "ERROR AT CREATE_TWEET THUNK"
+    const errors = await response.json()
+    return errors
   }
 }
 

@@ -1,18 +1,19 @@
 .create-tweet-form {
-  width: 546px;
-  height: fit-content;
+  width: 100%;
+  height: auto;
   display: flex;
   padding: 0 15px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 .create-tweet-form form {
   width: 100%;
+  height: auto;
 }
 .create-tweet-textarea {
   padding: 5px 5px;
   position: relative;
   display: block;
-  width: 90%;
+  width: 100%;
   height: auto;
 }
 
@@ -28,11 +29,15 @@
   width:100%;
   height: 90%;
   background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.233);
   font-size: 20px;
   resize: none;
   color: #fff;
   overflow-y: hidden;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.233); */
+}
+
+.create-tweet-textarea textarea:focus {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.233);
 }
 
 
@@ -56,4 +61,41 @@
   justify-content: flex-end;
   padding-right: 0px;
   margin-bottom: 10px;
+}
+
+.label-for-file-bttn:hover {
+  cursor: pointer;
+}
+
+.label-for-file-bttn {
+  color: #1D9bf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  border-radius: 24px;
+  /* background-color: #fff; */
+}
+
+.label-for-file-bttn:hover {
+  background-color: rgba(26, 129, 197, 0.39);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#tweet-image {
+  border-radius: 16px;
+  height: auto;
+  width: auto;
+  max-width: 90%;
+}
+
+.create-form-action-div {
+  display: inline-flex;
+  width: 100%;
+  /* align-content: space-between; */
+  justify-content: space-between;
 }

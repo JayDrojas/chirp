@@ -42,3 +42,32 @@
 #myTextarea::placeholder {
   color: #8b98A5;
 }
+
+/* input[type="file"]{
+  -webkit-appearance: none;
+  text-align: left;
+  -webkit-rtl-ordering:  left;
+} */
+
+input[type="file"]::-webkit-file-upload-button{
+  /* -webkit-appearance: none; */
+  float: right;
+  margin: 0 0 0 10px;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#d2d0d0), to(#f0f0f0));
+  background-image: -moz-linear-gradient(90deg, #d2d0d0 0%, #f0f0f0 100%);
+}
+
+#select-file-button {
+  background-color: #2f2f2f;
+  cursor: pointer;
+  padding: 10px;
+  padding-left: 115px;
+  padding-right: 115px;
+  /* border-radius: 5px; */
+  color: white;
+  transition: .2s;
+  border-top: 1px lightgray solid;
+  border-bottom: 1px lightgray solid;
+}

@@ -129,3 +129,7 @@
   cursor: pointer;
   background-color: rgb(215, 219, 220);
 }
+
+.errors-container {
+  color: #1DA1F2;
+}
