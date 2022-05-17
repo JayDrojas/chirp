@@ -7,6 +7,7 @@ import EditTweetModal from "./EditTweetModal";
 import DeleteTweetModal from "./DeleteTweetModal";
 import CreateReplyForm from "../Replies/CreateReplyForm";
 import Replies from "../Replies/Replies"
+import './Tweet.css'
 
 const Tweet = () => {
   const { chirpId } = useParams()
@@ -20,9 +21,22 @@ const Tweet = () => {
   }, [dispatch, chirpId])
 
   return (
-    <div>
-      <p>{tweet?.content}</p>
-      <p>username : {tweet?.user?.username}</p>
+    <div id="tweet-wrapper-detail">
+      <div id="tweet-header-div">
+        <div>{'<==='}</div>
+        <h1>Tweet</h1>
+      </div>
+      <div id="tweet-div-detail">
+        <i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
+        <div id="tweet-detail-usernames">
+          <p>{tweet?.user.first_name}</p>
+          <p>@{tweet?.user.username}</p>
+        </div>
+      </div>
+      <div id="tweet-div-detail-content">
+        <p>{tweet?.content}</p>
+        <p>{tweet?.created_at}</p>
+      </div>
       <div>
         {user && user?.id === tweet?.user_id && (
           <>

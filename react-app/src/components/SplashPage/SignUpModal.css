@@ -1,0 +1,18 @@
+.signup-modal-content {
+  background-color: #15202B;
+  min-height: 400px;
+  min-width: 600px;
+  max-height: 90vh;
+  max-width: 80vw;
+  flex-shrink: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  height: auto;
+  width: auto;
+  border: none;
+  overflow: auto;
+}
+
+#signup-form {
+  margin-top: 40px;
+}

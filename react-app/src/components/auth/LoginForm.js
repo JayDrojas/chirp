@@ -39,7 +39,6 @@ const LoginForm = () => {
       </div>
       <div className='login-form-div'>
         <div className='login-form-div-content'>
-          <label className='login_label' htmlFor='email'>Email</label>
           <input
           className="input_login"
             name='email'
@@ -51,8 +50,6 @@ const LoginForm = () => {
         </div>
       </div>
       <div className='login-form-div'>
-        <div className='login-form-div-content'>
-          <label className='login_label' htmlFor='password'>Password</label>
           <input
           className="input_login"
             name='password'
@@ -61,7 +58,6 @@ const LoginForm = () => {
             value={password}
             onChange={updatePassword}
           />
-        </div>
       </div>
         <div className='login-form-div login-form-div-bttn-cont'>
           <div className='submit-bttn-div' onClick={onLogin}>

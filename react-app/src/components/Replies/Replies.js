@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { get_all_replies } from "../../store/replies";
@@ -35,6 +35,5 @@ const Replies = () => {
     </div>
   )
 }
-
 
 export default Replies;
