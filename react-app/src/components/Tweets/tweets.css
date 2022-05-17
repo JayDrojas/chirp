@@ -76,3 +76,12 @@
 .create-tweet-form {
   width: 90%;
 }
+
+.tweet-user-content p {
+  margin: 10px 10px;
+}
+
+.tweet-user-content > p:nth-child(2) {
+  color: #8b98A5;
+  font-size: 15px;
+}

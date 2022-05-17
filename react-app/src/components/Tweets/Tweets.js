@@ -21,7 +21,6 @@ const Tweets = () => {
       <CreateTweetForm />
       {tweets && tweets.map(tweet => (
         <div key={tweet?.id} className="tweet-container">
-          {/* <Link to={`/chirps/${tweet.id}`}> */}
           <div className="tweet-div">
             <div className="tweets-profile-pic"><i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
             </div>
@@ -32,14 +31,13 @@ const Tweets = () => {
                 </div>
                 {user?.id === tweet?.user_id && (
                   <div>
-                    {/* <EditTweetModal tweet={tweet} />
-                    <DeleteTweetModal tweet={tweet} /> */}
                     <TweetBurger tweet={tweet} />
                   </div>)}
               </div>
               <Link to={`/chirps/${tweet.id}`}>
                 <div className="tweet-user-content">
                   <p>{tweet.content}</p>
+                  <p>{tweet?.created_at}</p>
                 </div>
               </Link>
             </div>
