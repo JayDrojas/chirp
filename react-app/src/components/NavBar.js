@@ -13,13 +13,13 @@ const NavBar = () => {
       <div className='navbar-container'>
         <div>
           <div className='navbar-item-div'>
-            <i class="fa-brands fa-twitter" style={{ fontSize: "25px" }}></i>
+            <i className="fa-brands fa-twitter" style={{ fontSize: "25px" }}></i>
           </div>
         </div>
         <div>
           <div className='navbar-item-div'>
             <NavLink to='/' exact={true} activeClassName='active'>
-              <i class="fa-solid fa-house-user" style={{ fontSize: "25px" }} ></i>
+              <i className="fa-solid fa-house-user" style={{ fontSize: "25px" }} ></i>
               Home
             </NavLink>
           </div>
@@ -27,7 +27,7 @@ const NavBar = () => {
         <div>
           <div className='navbar-item-div'>
             <NavLink to='/profile' exact={true} activeClassName='active'>
-              <i class="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
+              <i className="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
               Profile
             </NavLink>
           </div>
@@ -36,7 +36,7 @@ const NavBar = () => {
           <div className='navbar-item-div'>
             <NavLink to='/' exact={true} activeClassName='active'>
               {/* <i class="fa-solid fa-square-info"></i> */}
-              <i class="fa-solid fa-circle-info" style={{ fontSize: "25px" }}></i>
+              <i className="fa-solid fa-circle-info" style={{ fontSize: "25px" }}></i>
               About
             </NavLink>
           </div>

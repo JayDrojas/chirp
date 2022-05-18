@@ -49,7 +49,7 @@ const CreateTweetForm = () => {
 
   return (
     <div className="create-tweet-form">
-      <i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
+      <i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
       <form onSubmit={handleTweet}>
         <div className="create-tweet-textarea">
           <div>
@@ -67,7 +67,7 @@ const CreateTweetForm = () => {
             placeholder="What's happening?"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            // required={true}
+          // required={true}
           />
           {image && (
             <img id="tweet-image" src={URL.createObjectURL(image)} alt='' />
@@ -82,11 +82,13 @@ const CreateTweetForm = () => {
               onChange={handleImage}
             />
             <div>
-              <i style={{ fontSize: "18px" }} class="fa-regular fa-image"></i>
+              <i style={{ fontSize: "18px" }} className="fa-regular fa-image"></i>
             </div>
           </label>
           <div className="crt-chrp-div">
-            {content.length > 255 && (<span id="span-character-error">{255 - content?.length}</span>)}
+            <div>
+              {content.length > 255 && (<span id="span-character-error">{255 - content?.length}</span>)}
+            </div>
             <button className="create-chirp-bttn-form" type="submit">Chirp</button>
           </div>
         </div>

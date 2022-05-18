@@ -21,6 +21,8 @@ const Tweet = () => {
     dispatch(get_one_tweet(chirpId))
   }, [dispatch, chirpId])
 
+  const DATE_OPTIONS = { year: 'numeric', month: 'short', day: 'numeric' };
+
   return (
     <div id="tweet-wrapper-detail">
       <div id="tweet-header-div">
@@ -28,7 +30,7 @@ const Tweet = () => {
         <h1>Tweet</h1>
       </div>
       <div id="tweet-div-detail">
-        <i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
+        <i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
         <div id="tweet-detail-usernames">
           <p>{tweet?.user.first_name}</p>
           <p>@{tweet?.user.username}</p>
@@ -43,7 +45,7 @@ const Tweet = () => {
       </div>
       <div id="tweet-div-detail-content">
         <p>{tweet?.content}</p>
-        <p>{tweet?.created_at}</p>
+        <p>{new Date(tweet?.created_at).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
       </div>
       <CreateReplyForm tweet={tweet} />
       <div>

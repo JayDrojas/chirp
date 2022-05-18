@@ -15,6 +15,7 @@ const Tweets = () => {
     dispatch(get_all_tweets())
   }, [dispatch])
 
+
   return (
     <div id="tweets-container">
       <h1>Home</h1>
@@ -22,7 +23,7 @@ const Tweets = () => {
       {tweets && tweets.sort((tweet1, tweet2) => tweet2?.id - tweet1?.id).map(tweet => (
         <div key={tweet?.id} className="tweet-container">
           <div className="tweet-div">
-            <div className="tweets-profile-pic"><i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
+            <div className="tweets-profile-pic"><i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
             </div>
             <div className="tweet-actions-container">
               <div className="tweet-action-div">

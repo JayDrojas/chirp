@@ -40,7 +40,7 @@ const CreateReplyForm = ({ tweet }) => {
 
   return (
     <div className="create-tweet-form">
-      <i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
+      <i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
       <form onSubmit={handleSubmit}>
         <div className="create-tweet-textarea">
         <div>

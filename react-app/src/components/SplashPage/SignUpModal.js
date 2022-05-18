@@ -17,7 +17,7 @@ const SignUpModal = () => {
             <button className="close" onClick={close}>
               &times;
             </button>
-            <div className="header"> <i class="fa-brands fa-twitter" style={{ fontSize: "30px"}}></i> </div>
+            <div className="header"> <i className="fa-brands fa-twitter" style={{ fontSize: "30px"}}></i> </div>
             <div className="content">
               <h1>Create your account</h1>
               <SignUpForm />

@@ -14,7 +14,7 @@ const SplashPage = () => {
       <div id="authentication-actions-div">
         <div className="splash-header-div">
           <div id="splash-bird-div">
-            <i class="fa-brands fa-twitter" style={{ fontSize: "40px" }}></i>
+            <i className="fa-brands fa-twitter" style={{ fontSize: "40px" }}></i>
           </div>
           <h1>Happening now</h1>
         </div>
