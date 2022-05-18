@@ -70,7 +70,7 @@ const CreateTweetForm = () => {
             // required={true}
           />
           {image && (
-            <img src={URL.createObjectURL(image)} alt='' />
+            <img id="tweet-image" src={URL.createObjectURL(image)} alt='' />
           )}
         </div>
         <div className="create-form-action-div">
