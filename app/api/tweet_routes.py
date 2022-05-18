@@ -2,6 +2,10 @@ from crypt import methods
 from flask import Blueprint, jsonify, request
 from app.models import Tweet, User, Reply, db
 from app.forms import Create_tweet_form, Update_tweet_form
+from flask_login import current_user
+from app.s3_helpers import (
+    upload_file_to_s3, allowed_file, get_unique_filename
+)
 
 tweet_routes = Blueprint('tweets', __name__)
 
@@ -15,16 +19,38 @@ def create_tweet():
   form = Create_tweet_form()
   form['csrf_token'].data = request.cookies['csrf_token']
 
-  if form.validate_on_submit():
-    tweet = Tweet(
-      content = form.content.data,
-      user_id = form.user_id.data
-    )
-    print(tweet)
-    db.session.add(tweet)
-    db.session.commit()
-    print(tweet)
-    return tweet.to_dict()
+  if "image" not in request.files:
+      return {"errors": "image required"}, 400
+
+  image = request.files["image"]
+
+  if not allowed_file(image.filename):
+        return {"errors": "file type not permitted"}, 400
+
+  image.filename = get_unique_filename(image.filename)
+
+  upload = upload_file_to_s3(image)
+
+  if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+        return upload, 400
+
+  url = upload["url"]
+
+  # if form.validate_on_submit():
+  print(form.content.data)
+  tweet = Tweet(
+    content = form.content.data,
+    user_id = current_user.id,
+    image = url
+  )
+
+  db.session.add(tweet)
+  db.session.commit()
+
+  return tweet.to_dict()
 
 @tweet_routes.route('/<int:id>')
 def get_tweet(id):
@@ -54,3 +80,7 @@ def get_replies(id):
   replies = Reply.query.filter(Reply.tweet_id == id).all()
   reply_list = [reply.to_dict() for reply in replies]
   return {'replies': reply_list}
+
+@tweet_routes.errorhandler(500)
+def internal_server_error(e):
+    return {"errors": ["Internal Server Error"]}, 500

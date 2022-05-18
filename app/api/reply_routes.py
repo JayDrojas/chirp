@@ -43,3 +43,7 @@ def delete_reply(id):
     db.session.delete(reply)
     db.session.commit()
   return 'Success'
+
+@reply_routes.errorhandler(500)
+def internal_server_error(e):
+    return {"errors": ["Internal Server Error"]}, 500

@@ -34,10 +34,10 @@ const Tweets = () => {
                     <TweetBurger tweet={tweet} />
                   </div>)}
               </div>
-              <Link to={`/chirps/${tweet.id}`}>
+              <Link to={`/chirps/${tweet?.id}`}>
                 <div className="tweet-user-content">
-                  <p>{tweet.content}</p>
-                  <p>{tweet?.created_at}</p>
+                  <p>{tweet?.content}</p>
+                  <img id="tweet-image" src={tweet?.image} alt=''/>
                 </div>
               </Link>
             </div>

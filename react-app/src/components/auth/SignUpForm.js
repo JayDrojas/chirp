@@ -7,12 +7,14 @@ const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [first_name, setFirstName] = useState();
+  const [first_name, setFirstName] = useState('');
   const [last_name, setLastName] = useState();
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+
+
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -21,6 +23,8 @@ const SignUpForm = () => {
       if (data) {
         setErrors(data)
       }
+    } else {
+      setErrors(["Passwords must match"])
     }
   };
 
@@ -46,7 +50,7 @@ const SignUpForm = () => {
 
   return (
     <form>
-      <div>
+      <div className='errors-container'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
