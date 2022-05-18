@@ -1,5 +1,8 @@
 #tweet-wrapper-detail {
   padding: 15px 15px;
+  height: 100%;
+  /* border-left: 1px solid #8b98A5;
+  border-right: 1px solid #8b98A5; */
 }
 
 #tweet-header-div {

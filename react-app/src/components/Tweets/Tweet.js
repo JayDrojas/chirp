@@ -8,6 +8,7 @@ import DeleteTweetModal from "./DeleteTweetModal";
 import CreateReplyForm from "../Replies/CreateReplyForm";
 import Replies from "../Replies/Replies"
 import './Tweet.css'
+import TweetBurger from "./TweetBurger";
 
 const Tweet = () => {
   const { chirpId } = useParams()
@@ -32,18 +33,17 @@ const Tweet = () => {
           <p>{tweet?.user.first_name}</p>
           <p>@{tweet?.user.username}</p>
         </div>
+        <div>
+        {user && user?.id === tweet?.user_id && (
+          <>
+            <TweetBurger tweet={tweet} />
+          </>
+        )}
+      </div>
       </div>
       <div id="tweet-div-detail-content">
         <p>{tweet?.content}</p>
         <p>{tweet?.created_at}</p>
-      </div>
-      <div>
-        {user && user?.id === tweet?.user_id && (
-          <>
-            <EditTweetModal tweet={tweet} />
-            <DeleteTweetModal tweet={tweet} />
-          </>
-        )}
       </div>
       <CreateReplyForm tweet={tweet} />
       <div>

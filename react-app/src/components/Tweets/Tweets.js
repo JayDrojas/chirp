@@ -19,7 +19,7 @@ const Tweets = () => {
     <div id="tweets-container">
       <h1>Home</h1>
       <CreateTweetForm />
-      {tweets && tweets.map(tweet => (
+      {tweets && tweets.sort((tweet1, tweet2) => tweet2?.id - tweet1?.id).map(tweet => (
         <div key={tweet?.id} className="tweet-container">
           <div className="tweet-div">
             <div className="tweets-profile-pic"><i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>

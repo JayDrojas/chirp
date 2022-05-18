@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { create_tweet } from "../../store/tweets";
 import './TweetForm.css'
 
@@ -40,8 +40,6 @@ const CreateTweetForm = () => {
   function setNewSize(e) {
     if (content.length >= 256) {
       e.target.style.color = "red";
-      // let span = document.querySelector('#span-character-error')
-      // span.innerText = -(content.length - 255)
     } else {
       e.target.style.color = "#fff";
     }
@@ -69,7 +67,7 @@ const CreateTweetForm = () => {
             placeholder="What's happening?"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            required={true}
+            // required={true}
           />
           {image && (
             <img src={URL.createObjectURL(image)} alt='' />

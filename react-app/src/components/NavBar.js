@@ -1,17 +1,19 @@
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import './NavBar.css'
 import CreateTweetModal from './Tweets/CreateTweetModal';
 
 const NavBar = () => {
+  const user = useSelector(state => state.session.user)
   return (
     <nav>
       <div className='navbar-container'>
         <div>
           <div className='navbar-item-div'>
-            <i  class="fa-brands fa-twitter" style={{ fontSize: "25px" }}></i>
+            <i class="fa-brands fa-twitter" style={{ fontSize: "25px" }}></i>
           </div>
         </div>
         <div>
@@ -39,13 +41,17 @@ const NavBar = () => {
             </NavLink>
           </div>
         </div>
-        <div>
-          <CreateTweetModal />
+        <div className='bottom-navbar'>
+          <div>
+            <CreateTweetModal />
+          </div>
+          <div className='user-logout-div'>
+            <LogoutButton />
+            <p>{user?.first_name + ' ' + user?.last_name}</p>
+            <p>@{user?.username}</p>
+          </div>
         </div>
       </div>
-        <div>
-          <LogoutButton />
-        </div>
     </nav >
   );
 }
