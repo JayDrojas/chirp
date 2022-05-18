@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { create_reply } from "../../store/replies";
+import "./index.css"
 
 const CreateReplyForm = ({ tweet }) => {
   const user = useSelector(state => state.session.user)
@@ -39,34 +40,40 @@ const CreateReplyForm = ({ tweet }) => {
   }
 
   return (
-    <div className="create-tweet-form">
-      <i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
-      <form onSubmit={handleSubmit}>
-        <div className="create-tweet-textarea">
-        <div>
-          {errors.length > 0 && (
-            errors.map(error => (
-              <p>{error}</p>
-              ))
+    <div className="reply-tweet-div">
+      <div className="reply-tweet-header">
+        <div></div>
+        <div>Replying to @{tweet?.user.username}</div>
+      </div>
+      <div className="reply-content">
+        <i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
+        <form onSubmit={handleSubmit}>
+          <div className="create-tweet-textarea">
+            <div>
+              {errors.length > 0 && (
+                errors.map(error => (
+                  <p>{error}</p>
+                ))
               )}
-              </div>
-              <p>Replying to {tweet?.user.username}</p>
-          <textarea
-            name="content"
-            id="myTextarea"
-            onKeyUp={setNewSize}
-            type="text"
-            placeholder="Chirp your reply"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            required={true}
-          />
-        </div>
-        <div className="crt-chrp-div">
-          {content.length > 255 && (<span id="span-character-error">{255 - content?.length}</span>)}
-          <button className="create-chirp-bttn-form" type="submit">Reply</button>
-        </div>
-      </form>
+            </div>
+            <textarea
+              name="content"
+              id="myTextarea"
+              onKeyUp={setNewSize}
+              type="text"
+              placeholder="Chirp your reply"
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              required={true}
+            />
+          </div>
+          <div className="crt-chrp-div">
+            {content.length > 255 && (<span id="span-character-error">{255 - content?.length}</span>)}
+            <button className="create-chirp-bttn-form" type="submit">Reply</button>
+          </div>
+
+        </form>
+      </div>
     </div>
   )
 }

@@ -36,16 +36,21 @@ const Tweet = () => {
           <p>@{tweet?.user.username}</p>
         </div>
         <div>
-        {user && user?.id === tweet?.user_id && (
-          <>
-            <TweetBurger tweet={tweet} />
-          </>
-        )}
-      </div>
+          {user && user?.id === tweet?.user_id && (
+            <>
+              <TweetBurger tweet={tweet} />
+            </>
+          )}
+        </div>
       </div>
       <div id="tweet-div-detail-content">
-        <p>{tweet?.content}</p>
-        <p>{new Date(tweet?.created_at).toLocaleDateString('en-US', DATE_OPTIONS)}</p>
+        <div className="tweet-user-content">
+          <div className="reply-tweet-content">{tweet?.content}</div>
+          <div className="tweet-image-container">
+            <img id="tweet-image-reply" src={tweet?.image} alt='' />
+          </div>
+        </div>
+        <div>{new Date(tweet?.created_at).toLocaleDateString('en-US', DATE_OPTIONS)}</div>
       </div>
       <CreateReplyForm tweet={tweet} />
       <div>
