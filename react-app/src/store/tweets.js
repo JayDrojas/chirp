@@ -82,20 +82,23 @@ export const get_one_tweet = (id) => async(dispatch) => {
 }
 
 export const update_one_tweet = (tweet) => async(dispatch) => {
-  const response = await fetch(`/api/tweets/${tweet.id}`, {
+  const id = tweet.get('id')
+  const response = await fetch(`/api/tweets/${id}`, {
     method: "PUT",
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(tweet)
+    // headers: {
+    //   'Accept': 'application/json',
+    //   'Content-Type': 'application/json'
+    // },
+    body: tweet
   })
 
   if(response.ok) {
     const updatedTweet = await response.json()
     dispatch(update(updatedTweet))
+    return updatedTweet
   } else {
-    return 'ERROR ON UPDATE_ONE_TWEET THUNK'
+    const errors = await response.json()
+    return errors
   }
 }
 

@@ -1,6 +1,7 @@
 from crypt import methods
+from email.mime import image
 from flask import Blueprint, jsonify, request
-from app.models import Tweet, User, Reply, db
+from app.models import Tweet, User, Reply, db, tweet
 from app.forms import Create_tweet_form, Update_tweet_form
 from flask_login import current_user
 from app.s3_helpers import (
@@ -20,12 +21,19 @@ def create_tweet():
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if "image" not in request.files:
-      return {"errors": "image required"}, 400
+    tweet = Tweet(
+    content = form.content.data,
+    user_id = current_user.id
+  )
+
+    db.session.add(tweet)
+    db.session.commit()
+    return tweet.to_dict()
 
   image = request.files["image"]
 
   if not allowed_file(image.filename):
-        return {"errors": "file type not permitted"}, 400
+    return {"errors": "file type not permitted"}, 400
 
   image.filename = get_unique_filename(image.filename)
 
@@ -40,7 +48,6 @@ def create_tweet():
   url = upload["url"]
 
   # if form.validate_on_submit():
-  print(form.content.data)
   tweet = Tweet(
     content = form.content.data,
     user_id = current_user.id,
@@ -63,10 +70,34 @@ def update_tweet(id):
   form['csrf_token'].data = request.cookies['csrf_token']
 
   update_tweet = Tweet.query.get(id)
-  if update_tweet:
-    update_tweet.content = form.content.data
-    db.session.commit()
-    return update_tweet.to_dict()
+
+  if "image" not in request.files:
+    if update_tweet:
+      update_tweet.content = form.content.data
+      db.session.commit()
+      return update_tweet.to_dict()
+
+  image = request.files["image"]
+
+  if not allowed_file(image.filename):
+    return {"errors": "file type not permited"}, 400
+
+  image.filename = get_unique_filename(image.filename)
+
+  upload = upload_file_to_s3(image)
+
+  if "url" not in upload:
+    return upload, 400
+
+  url = upload["url"]
+
+  # if update_tweet:
+  update_tweet.content = form.content.data
+  update_tweet.image = url
+
+  db.session.commit()
+
+  return update_tweet.to_dict()
 
 @tweet_routes.route('/<int:id>', methods=['DELETE'])
 def delete_tweet(id):

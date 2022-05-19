@@ -91,6 +91,7 @@ input[type="file"] {
   height: auto;
   width: auto;
   max-width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.233);
 }
 
 .create-form-action-div {

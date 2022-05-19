@@ -32,7 +32,7 @@ const LoginForm = () => {
 
   return (
     <form id='login-form'>
-      <div>
+      <div className='errors-container'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}

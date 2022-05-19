@@ -7,7 +7,7 @@ class Reply(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
   tweet_id = db.Column(db.Integer, db.ForeignKey('tweets.id', ondelete="CASCADE"))
-  content = db.Column(db.String(500), nullable=False)
+  content = db.Column(db.String(255), nullable=False)
   created_at = db.Column(db.DateTime(timezone=True),
                            server_default=func.now())
   updated_at = db.Column(db.DateTime(timezone=True),
@@ -20,5 +20,6 @@ class Reply(db.Model):
       'id': self.id,
       'user_id': self.user_id,
       'content': self.content,
-      'created_at': self.created_at
+      'created_at': self.created_at,
+      'user': self.user.to_dict()
     }

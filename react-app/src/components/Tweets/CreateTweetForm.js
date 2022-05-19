@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { create_tweet } from "../../store/tweets";
 import './TweetForm.css'
 
@@ -40,8 +40,6 @@ const CreateTweetForm = () => {
   function setNewSize(e) {
     if (content.length >= 256) {
       e.target.style.color = "red";
-      // let span = document.querySelector('#span-character-error')
-      // span.innerText = -(content.length - 255)
     } else {
       e.target.style.color = "#fff";
     }
@@ -51,10 +49,10 @@ const CreateTweetForm = () => {
 
   return (
     <div className="create-tweet-form">
-      <i class="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
+      <i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
       <form onSubmit={handleTweet}>
         <div className="create-tweet-textarea">
-          <div>
+          <div className="errors-container">
             {errors.length > 0 && (
               errors.map(error => (
                 <p>{error}</p>
@@ -69,10 +67,10 @@ const CreateTweetForm = () => {
             placeholder="What's happening?"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            required={true}
+          // required={true}
           />
           {image && (
-            <img src={URL.createObjectURL(image)} alt='' />
+            <img id="tweet-image" src={URL.createObjectURL(image)} alt='' />
           )}
         </div>
         <div className="create-form-action-div">
@@ -84,11 +82,13 @@ const CreateTweetForm = () => {
               onChange={handleImage}
             />
             <div>
-              <i style={{ fontSize: "18px" }} class="fa-regular fa-image"></i>
+              <i style={{ fontSize: "18px" }} className="fa-regular fa-image"></i>
             </div>
           </label>
           <div className="crt-chrp-div">
-            {content.length > 255 && (<span id="span-character-error">{255 - content?.length}</span>)}
+            <div>
+              {content.length > 255 && (<span id="span-character-error">{255 - content?.length}</span>)}
+            </div>
             <button className="create-chirp-bttn-form" type="submit">Chirp</button>
           </div>
         </div>

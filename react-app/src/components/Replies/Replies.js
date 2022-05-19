@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { get_all_replies } from "../../store/replies";
 import DeleteReplyModal from "./DeleteReplyModal";
 import EditReplyModal from "./EditReplyModal";
+import ReplyBurger from "./ReplyBurger";
 
 const Replies = () => {
   const dispatch = useDispatch()
@@ -18,18 +19,30 @@ const Replies = () => {
   }, [dispatch])
 
   return (
-    <div>
-      <h1>Replies</h1>
+    <div className="replies-container">
       {replies && replies.map(reply => (
         <div key={reply?.id}>
-          <h3 key={reply}>{reply?.content}</h3>
-          <h4> {reply?.user_id}</h4>
-          {user?.id === reply?.user_id && (
-            <div>
-              <EditReplyModal reply={reply} />
-              <DeleteReplyModal reply={reply} />
+          <div key={reply?.id} className='reply-container'>
+            <div className="reply-div">
+              <div className="reply-profile-pic"><i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
+              </div>
+              <div className="reply-action-container">
+                <div className="reply-action-div">
+                  <div className="reply-user-info-div">
+                    <p><span>{reply?.user.first_name + ' ' + reply?.user.last_name}</span> @{reply?.user.username} </p>
+                  </div>
+                  {user?.id === reply?.user_id && (
+                    <div>
+                      <ReplyBurger reply={reply} />
+                    </div>
+                  )}
+                </div>
+                <div className="reply-user-content">
+                  <p>{reply?.content}</p>
+                </div>
+              </div>
             </div>
-          )}
+          </div>
         </div>
       ))}
     </div>
