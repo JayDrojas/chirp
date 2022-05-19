@@ -2,11 +2,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { get_all_replies } from "../../store/replies";
-import DeleteReplyModal from "./DeleteReplyModal";
-import EditReplyModal from "./EditReplyModal";
 import ReplyBurger from "./ReplyBurger";
 
-const Replies = () => {
+const Replies = ({tweet}) => {
   const dispatch = useDispatch()
   const { chirpId } = useParams()
   const user = useSelector(store => store.session.user)
@@ -30,6 +28,7 @@ const Replies = () => {
                 <div className="reply-action-div">
                   <div className="reply-user-info-div">
                     <p><span>{reply?.user.first_name + ' ' + reply?.user.last_name}</span> @{reply?.user.username} </p>
+                    <p>Replying to <span id="reply-to-span">@{tweet?.user.username}</span></p>
                   </div>
                   {user?.id === reply?.user_id && (
                     <div>
