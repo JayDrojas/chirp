@@ -1,12 +1,10 @@
 import { useDispatch } from "react-redux"
-import { useHistory } from "react-router-dom"
+// import { useHistory } from "react-router-dom"
 import { delete_one_reply } from "../../store/replies"
 
 const DeleteReplyForm = ({ reply, close }) => {
   const dispatch = useDispatch()
-  const history = useHistory()
-
-  console.log(reply)
+  // const history = useHistory()
 
   const handleDeleteTweet = (e) => {
     e.preventDefault()

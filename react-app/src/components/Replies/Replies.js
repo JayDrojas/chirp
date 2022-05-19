@@ -10,8 +10,6 @@ const Replies = ({tweet}) => {
   const user = useSelector(store => store.session.user)
   const replies = useSelector(store => Object.values(store.replies))
 
-  console.log(replies)
-
   useEffect(() => {
     dispatch(get_all_replies(chirpId))
   }, [dispatch])
