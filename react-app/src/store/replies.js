@@ -54,7 +54,7 @@ export const update_one_reply = (reply) => async(dispatch) => {
 }
 
 export const get_all_replies = (id) => async(dispatch) => {
-  const response = await fetch(`/api/tweets/${id}/replies`)
+  const response = await fetch(`/api/tweets/${id}/replies/`)
 
   if(response.ok) {
     const replies = await response.json()
