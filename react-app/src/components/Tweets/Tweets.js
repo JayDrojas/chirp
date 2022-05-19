@@ -39,7 +39,10 @@ const Tweets = () => {
               <Link to={`/chirps/${tweet?.id}`}>
                 <div className="tweet-user-content">
                   <p>{tweet?.content}</p>
-                  <img id="tweet-image" src={tweet?.image} alt='' />
+                  {tweet?.image && (
+
+                    <img id="tweet-image" src={tweet?.image} alt='' />
+                  )}
                 </div>
               </Link>
             </div>

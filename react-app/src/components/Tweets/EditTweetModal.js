@@ -1,13 +1,14 @@
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import EditTweetForm from './EditTweetForm'
-
+import './EditTweet.css'
 
 const EditTweetModal = ({tweet}) => {
   return (
     <>
       <Popup
         trigger={<div className="button"> Edit Tweet </div>}
+        className="edit-tweet"
         modal
         nested
       >
@@ -17,7 +18,7 @@ const EditTweetModal = ({tweet}) => {
               &times;
             </button>
             <div className="header"> Edit Tweet </div>
-            <div className="content">
+            <div className="content-edit-tweet">
               <EditTweetForm tweet={tweet} close={close} />
             </div>
           </div>
