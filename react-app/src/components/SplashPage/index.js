@@ -3,10 +3,12 @@ import SignUpModal from "./SignUpModal";
 import './LoginModal.css'
 import './index.css'
 import DemoSignin from "./DemoSignin";
+import { Link } from "react-router-dom";
 
 const SplashPage = () => {
 
   return (
+    <>
     <div className="splash-page-wrapper">
       <div id="splash-img-div">
         {/* <img id="splash-page-img" alt="background" src="/static/images/twitter-background.png" /> */}
@@ -45,6 +47,19 @@ const SplashPage = () => {
         </div>
       </div>
     </div>
+    <footer id="splash-footer">
+        <div className="footer-divs">
+          <a href="https://github.com/JayDrojas/animagee">Github Repo</a>
+        </div>
+        <div className="footer-divs">
+          <a href="https://www.linkedin.com/in/damian-rojas-076a571b8/" >LinkedIn</a>
+        </div>
+        <div className="footer-divs">
+          <p>2022 - Juan Damian Rojas</p>
+        </div>
+      </footer>
+    </>
+
 
   )
 }

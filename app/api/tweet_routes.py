@@ -71,6 +71,9 @@ def update_tweet(id):
 
   update_tweet = Tweet.query.get(id)
 
+  if not update_tweet.id == current_user.id:
+    return {'error': ['Can only update chirps that are owned by the user.']}
+
   if "image" not in request.files:
     if update_tweet:
       update_tweet.content = form.content.data
@@ -102,9 +105,12 @@ def update_tweet(id):
 @tweet_routes.route('/<int:id>', methods=['DELETE'])
 def delete_tweet(id):
   tweet = Tweet.query.get(id)
-  db.session.delete(tweet)
-  db.session.commit()
-  return 'Success'
+
+  if tweet and tweet.id == current_user.id:
+    db.session.delete(tweet)
+    db.session.commit()
+    return 'Success'
+  else: return 'Error deleting Chirp.'
 
 @tweet_routes.route('/<int:id>/replies/')
 def get_replies(id):

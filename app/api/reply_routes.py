@@ -47,7 +47,7 @@ def delete_reply(id):
     db.session.delete(reply)
     db.session.commit()
     return 'Success'
-  else: return 'Error deleting message.'
+  else: return 'Error deleting Reply.'
 
 @reply_routes.errorhandler(500)
 def internal_server_error(e):
