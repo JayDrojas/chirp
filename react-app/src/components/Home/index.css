@@ -32,5 +32,6 @@
 }
 
 .center-container h1 {
+  padding-top: 5px;
   font-size: 20px;
 }

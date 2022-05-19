@@ -1,7 +1,8 @@
 
 
 .reply-tweet-div {
-  padding-top: 20px;
+  padding: 20px 15px;
+  width: auto;
 }
 
 .reply-tweet-header {
@@ -14,8 +15,6 @@
 
 .reply-tweet-header > div:nth-child(1) {
   width: 10%;
-  /* clear: both;
-  padding-left: 10%; */
 }
 
 .tweet-image-container {
@@ -26,9 +25,11 @@
 
 .reply-tweet-content {
   height: fit-content;
-  width: 100%;
+  /* width: 100%; */
   white-space: pre-wrap;
   word-break: break-word;
+  margin: 0px 15px;
+  width: auto;
 }
 
 #tweet-image-reply {
@@ -42,12 +43,73 @@
 }
 
 .reply-content {
-  /* display: flex; */
   width: 100%;
 }
 
-.replies-container {
-  /* padding: 15px 15px; */
+/* .replies-container {
   height: 100vh;
   overflow-y: scroll;
+} */
+
+
+.reply-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.212);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.212);
+  padding: 15px 15px;
+  font-size: 15px;
+  height: auto;
 }
+
+.reply-profile-pic {
+  width: 8%;
+}
+
+.reply-action-container {
+  width: 100%;
+}
+
+.reply-div {
+  display: flex;
+  width: 100%;
+  /* overflow: hidden; */
+  word-wrap: break-word;
+}
+
+.reply-action-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.reply-user-info-div {
+  margin-bottom: 5px;
+  height: fit-content;
+}
+
+.reply-user-info-div > p {
+  font-weight: normal;
+  font-size: 15px;
+  color: #8b98A5;
+}
+
+.reply-user-info-div > p > span {
+  font-weight: bolder;
+  color: #fff;
+}
+
+.reply-user-content p {
+  /* overflow: hidden; */
+  height: fit-content;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.reply-user-content p {
+  margin: 10px 10px;
+}
+
+/* .reply-user-content > p:nth-child(2) {
+  color: #8b98A5;
+  font-size: 15px;
+} */

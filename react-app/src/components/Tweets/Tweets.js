@@ -33,20 +33,21 @@ const Tweets = () => {
                 {user?.id === tweet?.user_id && (
                   <div>
                     <TweetBurger tweet={tweet} />
-                  </div>)}
+                  </div>
+                )}
               </div>
               <Link to={`/chirps/${tweet?.id}`}>
                 <div className="tweet-user-content">
                   <p>{tweet?.content}</p>
-                  <img id="tweet-image" src={tweet?.image} alt=''/>
+                  <img id="tweet-image" src={tweet?.image} alt='' />
                 </div>
               </Link>
             </div>
           </div>
-        {/* </Link> */}
+          {/* </Link> */}
         </div>
-  ))
-}
+      ))
+      }
     </div >
   )
 }

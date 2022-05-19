@@ -54,7 +54,7 @@ const EditTweetForm = ({ tweet, close }) => {
       <i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
       <form onSubmit={handleEditTweet}>
         <div className="create-tweet-textarea">
-          <div>
+          <div className="errors-container">
             {errors.length > 0 && (
               errors.map(error => (
                 <p>{error}</p>
