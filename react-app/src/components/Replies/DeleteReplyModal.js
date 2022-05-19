@@ -6,7 +6,7 @@ const DeleteReplyModal = ({ reply }) => {
   return (
     <>
       <Popup
-        trigger={<button className="button"> Delete Tweet </button>}
+        trigger={<div className="button"> Delete Reply </div>}
         modal
         nested
       >

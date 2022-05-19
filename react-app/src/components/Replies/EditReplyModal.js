@@ -6,7 +6,7 @@ const EditReplyModal = ({reply}) => {
   return (
     <>
       <Popup
-        trigger={<button className="button"> Edit Reply </button>}
+        trigger={<div className="button"> Edit Reply </div>}
         modal
         nested
       >
