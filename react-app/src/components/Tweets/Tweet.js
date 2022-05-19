@@ -52,7 +52,7 @@ const Tweet = () => {
       </div>
       <CreateReplyForm tweet={tweet} />
       <div>
-        <Replies />
+        <Replies tweet={tweet} />
       </div>
     </div>
   )
