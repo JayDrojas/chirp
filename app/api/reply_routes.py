@@ -13,7 +13,7 @@ def create_reply():
 
   new_reply = Reply(
     user_id = form.user_id.data,
-    tweet_id = form.tweet_id.data,
+    tweet_id = current_user.id,
     content = form.content.data,
   )
 
@@ -27,7 +27,11 @@ def update_reply(id):
   form = Update_reply_form()
   form['csrf_token'].data = request.cookies['csrf_token']
 
+
   update_reply = Reply.query.get(id)
+
+  if not current_user.id == update_reply.user.id:
+    return {'error': ['Can only update replies that are owned by the user.']}
 
   if update_reply:
     update_reply.content = form.content.data
@@ -42,7 +46,8 @@ def delete_reply(id):
   if reply and current_user.id == reply.user_id:
     db.session.delete(reply)
     db.session.commit()
-  return 'Success'
+    return 'Success'
+  else: return 'Error deleting message.'
 
 @reply_routes.errorhandler(500)
 def internal_server_error(e):
