@@ -25,7 +25,7 @@ const Tweet = () => {
     <div id="tweet-wrapper-detail">
       <div id="tweet-header-div">
         <div onClick={e => history.goBack()} id="arrow-div"><i style={{fontSize: '15px'}} className="fa-solid fa-arrow-left"></i></div>
-        <h1>Tweet</h1>
+        <h1>Chirp</h1>
       </div>
       <div id="tweet-div-detail">
         <i className="fa-solid fa-user" style={{ fontSize: "35px" }}></i>
