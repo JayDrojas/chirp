@@ -91,8 +91,11 @@ input[type="file"] {
   height: auto;
   width: auto;
   max-width: 90%;
-  max-height: 50vh;
   border: 1px solid rgba(255, 255, 255, 0.233);
+}
+
+.edit-tweet-image {
+  max-height: 50vh;
 }
 
 .create-form-action-div {

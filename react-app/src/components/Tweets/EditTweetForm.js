@@ -72,7 +72,7 @@ const EditTweetForm = ({ tweet, close }) => {
           // required={true}
           />
           {currentImg && !changed && (
-            <img id="tweet-image" src={currentImg} alt='' />
+            <img id="tweet-image" className="edit-tweet-image" src={currentImg} alt='' />
           )}
           {image && changed && (
             <img id="tweet-image" src={URL.createObjectURL(image)} alt='' />
