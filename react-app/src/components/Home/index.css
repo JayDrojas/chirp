@@ -27,8 +27,9 @@
 }
 
 .right-container {
-  width: 30vh;
+  /* width: 30vh; */
   height: 100%;
+  word-wrap: break-word;
 }
 
 .center-container h1 {

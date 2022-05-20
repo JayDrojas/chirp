@@ -42,7 +42,6 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/chirps/:chirpId' exact={true} >
           <TweetsDetail />
-          {/* <Tweet /> */}
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

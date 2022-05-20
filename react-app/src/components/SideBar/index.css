@@ -1,0 +1,50 @@
+.right-sidebar-div {
+  margin-left: 30px;
+  background-color: rgb(30, 39, 50);
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+.right-subcontainers {
+  width: auto;
+  max-width: 375px;
+}
+
+.right-div-title {
+  /* margin-bottom: 0px; */
+  padding: 12px 16px;
+}
+
+.right-tweet-content {
+  font-size: 15px;
+  padding: 12px 16px;
+}
+
+#right-tweet-content h4 {
+  color: rgb(23, 140, 218);
+  font-size: 15px;
+}
+
+.right-subcontainers p {
+  color: #8b98A5;
+}
+
+.each-tweet-right {
+  /* margin: 30px 0px; */
+  font-size: 15px;
+  padding: 12px 16px;
+}
+
+.each-tweet-right:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.happening-div h4 {
+  margin-bottom: 5px;
+}
+
+.happening-div a {
+  text-decoration: none;
+  color: inherit;
+}
