@@ -7,6 +7,7 @@ const EditReplyModal = ({reply}) => {
     <>
       <Popup
         trigger={<div className="button"> Edit Reply </div>}
+        className="edit-tweet"
         modal
         nested
       >
@@ -16,7 +17,7 @@ const EditReplyModal = ({reply}) => {
               &times;
             </button>
             <div className="header"> Edit Reply </div>
-            <div className="content">
+            <div className="content-edit-tweet">
               <EditReplyForm reply={reply} close={close} />
             </div>
           </div>
