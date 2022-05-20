@@ -24,7 +24,7 @@ const Tweet = () => {
   return (
     <div id="tweet-wrapper-detail">
       <div id="tweet-header-div">
-        <div onClick={e => history.goBack()} id="arrow-div"><i style={{fontSize: '15px'}} className="fa-solid fa-arrow-left"></i></div>
+        <div onClick={e => history.goBack()} id="arrow-div"><i style={{ fontSize: '15px' }} className="fa-solid fa-arrow-left"></i></div>
         <h1>Chirp</h1>
       </div>
       <div id="tweet-div-detail">
@@ -45,7 +45,9 @@ const Tweet = () => {
         <div className="tweet-user-content">
           <div className="reply-tweet-content">{tweet?.content}</div>
           <div className="tweet-image-container">
-            <img id="tweet-image-reply" src={tweet?.image} alt='' />
+            {tweet?.image && (
+              <img id="tweet-image-reply" src={tweet?.image} alt='' />
+            )}
           </div>
         </div>
         <div id="tweet-date-div">{new Date(tweet?.created_at).toLocaleDateString('en-US', DATE_OPTIONS)}</div>

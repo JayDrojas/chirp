@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const AboutMe = () => {
 
   return (
@@ -9,12 +7,12 @@ const AboutMe = () => {
       <div className="aboutme-links">
         <div>
           <a className="icon github" href='https://github.com/JayDrojas/chirp'>
-            <i style={{ fontSize: '50px' }} class="fa-brands fa-github"></i>
+            <i style={{ fontSize: '50px' }} className="fa-brands fa-github"></i>
           </a>
         </div>
         <div>
           <a className="icon linkedin" href="https://www.linkedin.com/in/damian-rojas-076a571b8/">
-          <i style={{ fontSize: '50px' }} class="fa-brands fa-linkedin"></i>
+          <i style={{ fontSize: '50px' }} className="fa-brands fa-linkedin"></i>
           </a>
         </div>
       </div>
