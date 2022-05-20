@@ -10,6 +10,7 @@ const EditTweetForm = ({ tweet, close }) => {
   const [image, setImage] = useState('')
   const [changed, setChanged] = useState(false)
   const [currentImg, setCurrentImg] = useState(tweet?.image ? tweet?.image : '')
+
   const handleEditTweet = async (e) => {
     e.preventDefault()
 

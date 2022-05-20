@@ -12,8 +12,8 @@ def create_reply():
   form['csrf_token'].data = request.cookies['csrf_token']
 
   new_reply = Reply(
-    user_id = form.user_id.data,
-    tweet_id = current_user.id,
+    user_id = current_user.id,
+    tweet_id = form.tweet_id.data,
     content = form.content.data,
   )
 
