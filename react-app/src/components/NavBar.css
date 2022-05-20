@@ -79,14 +79,29 @@
 
 .logout-user {
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
-.logout-user p {
+.logout-user-tags {
+  font-size: 15px;
+  display: inline-flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+.logout-user-tags p::first-letter, .logout-user-tags span::first-letter {
+  text-transform: uppercase;
+  }
+
+.logout-user-tags p {
   padding-bottom: 5px;
+  text-transform: lowercase;
 }
 
 .logout-user span {
   color: #8b98a5;
+  text-transform: lowercase;
 }
 
 .three-dots {
@@ -95,4 +110,13 @@
 
 .three-dots:hover {
   cursor: pointer;
+}
+
+
+.user-logout-div-menu {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(247, 249, 249, 0.1);
+  margin-bottom: 10px;
 }

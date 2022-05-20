@@ -1,0 +1,81 @@
+.right-sidebar-div {
+  /* margin-left: 30px;
+  background-color: rgb(30, 39, 50);
+  border-radius: 16px;
+  margin-top: 20px; */
+}
+
+.right-subcontainers {
+  width: auto;
+  max-width: 375px;
+  margin-left: 30px;
+  background-color: rgb(30, 39, 50);
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+.right-div-title {
+  /* margin-bottom: 0px; */
+  padding: 12px 16px;
+}
+
+
+#right-tweet-content h4 {
+  color: rgb(23, 140, 218);
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.right-subcontainers p {
+  color: #8b98A5;
+}
+
+.each-tweet-right {
+  /* margin: 30px 0px; */
+  font-size: 15px;
+  padding: 12px 16px;
+}
+
+.each-tweet-right:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.happening-div h4 {
+  margin-bottom: 5px;
+}
+
+.happening-div a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.aboutme-links {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0px;
+}
+
+.aboutme-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.icon {
+  display : inline-block;
+  text-align: center;
+  width : 56px;
+  height : 56px;
+  padding : 8px;
+  border-radius:100%;
+  background-color : white;
+  margin:10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.icon:hover{
+  border-radius:10%;
+  transform: rotate(405deg);
+  color: rgb(29, 155, 240);
+  background-color: rgba(255, 255, 255, 0.03);;
+}

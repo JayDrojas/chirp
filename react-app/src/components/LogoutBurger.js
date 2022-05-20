@@ -7,7 +7,7 @@ const LogoutBurger = ({ user }) => {
   return (
     <Popup
       trigger={<div className="span-burger">...</div>}
-      position="left top"
+      position="top right"
       on="click"
       closeOnDocumentClick
       nested
@@ -18,6 +18,18 @@ const LogoutBurger = ({ user }) => {
       arrow={false}
     >
       <div className="menu-div">
+        <div className='user-logout-div-menu'>
+          {/* <LogoutButton /> */}
+          <div className='logout-user-pic'>
+            <i className="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
+          </div>
+          <div className='logout-user'>
+            <div className='logout-user-tags'>
+              <p>{user?.first_name + ' ' + user?.last_name}</p>
+            </div>
+            <span>@{user?.username}</span>
+          </div>
+        </div>
         <div className="menu-item"> <LogoutButton />
         </div>
       </div>

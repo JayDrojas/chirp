@@ -48,7 +48,7 @@ const SplashPage = () => {
       </div>
       <footer id="splash-footer">
         <div className="footer-divs">
-          <a href="https://github.com/JayDrojas/animagee">Github Repo</a>
+          <a href="https://github.com/JayDrojas/chirp">Github Repo</a>
         </div>
         <div className="footer-divs">
           <a href="https://www.linkedin.com/in/damian-rojas-076a571b8/" >LinkedIn</a>
@@ -58,8 +58,6 @@ const SplashPage = () => {
         </div>
       </footer>
     </>
-
-
   )
 }
 

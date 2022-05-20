@@ -2,6 +2,7 @@
 import Tweets from '../Tweets/Tweets'
 import NavBar from '../NavBar';
 import './index.css'
+import SideBar from '../SideBar';
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
         <Tweets />
       </div>
       <div className='right-container'>
-        placeholder
+        <SideBar />
       </div>
     </div>
 
