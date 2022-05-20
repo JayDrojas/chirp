@@ -1,0 +1,11 @@
+.edit-tweet-content {
+  width: auto;
+  height: auto;
+  padding: 0 0;
+}
+
+.content-edit-tweet {
+  width: 100%;
+  min-width: 35vw;
+  height: auto;
+}

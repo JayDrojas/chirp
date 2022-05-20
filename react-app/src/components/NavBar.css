@@ -59,3 +59,40 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.user-logout-div {
+  display: flex;
+  flex-direction: row;
+  border-radius: 64px;
+  padding: 5px 20px;
+}
+.user-logout-div:hover {
+  background-color: rgb(239, 243, 244, 0.1);
+}
+
+.logout-user-pic {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-user {
+  font-size: 15px;
+}
+
+.logout-user p {
+  padding-bottom: 5px;
+}
+
+.logout-user span {
+  color: #8b98a5;
+}
+
+.three-dots {
+  margin-left: 60px;
+}
+
+.three-dots:hover {
+  cursor: pointer;
+}

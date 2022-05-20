@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+import LogoutBurger from './LogoutBurger';
 import './NavBar.css'
 import CreateTweetModal from './Tweets/CreateTweetModal';
 
@@ -46,9 +47,15 @@ const NavBar = () => {
             <CreateTweetModal />
           </div>
           <div className='user-logout-div'>
-            <LogoutButton />
-            <p>{user?.first_name + ' ' + user?.last_name}</p>
-            <p>@{user?.username}</p>
+            {/* <LogoutButton /> */}
+            <div className='logout-user-pic'>
+              <i className="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
+            </div>
+            <div className='logout-user'>
+              <p>{user?.first_name + ' ' + user?.last_name}</p>
+              <span>@{user?.username}</span>
+            </div>
+            <div className='three-dots'><LogoutBurger user={user} /></div>
           </div>
         </div>
       </div>
