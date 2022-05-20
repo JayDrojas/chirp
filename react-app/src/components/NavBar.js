@@ -46,9 +46,15 @@ const NavBar = () => {
             <CreateTweetModal />
           </div>
           <div className='user-logout-div'>
-            <LogoutButton />
-            <p>{user?.first_name + ' ' + user?.last_name}</p>
-            <p>@{user?.username}</p>
+            {/* <LogoutButton /> */}
+            <div className='logout-user-pic'>
+              <i className="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
+            </div>
+            <div className='logout-user'>
+              <p>{user?.first_name + ' ' + user?.last_name}</p>
+              <span>@{user?.username}</span>
+            </div>
+            <div className='three-dots'>...</div>
           </div>
         </div>
       </div>

@@ -99,5 +99,5 @@ input[type="file"]::-webkit-file-upload-button{
 
 #arrow-div:hover {
   cursor: pointer;
-  background-color: rgba(140, 142, 144, 0.39);
+  background-color: rgb(239, 243, 244, 0.1);
 }
