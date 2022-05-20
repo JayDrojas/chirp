@@ -26,18 +26,9 @@ const NavBar = () => {
         </div>
         <div>
           <div className='navbar-item-div'>
-            <NavLink to='/profile' exact={true} activeClassName='active'>
+            <NavLink to={`/profile/${user?.id}`} exact={true} activeClassName='active'>
               <i className="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
               Profile
-            </NavLink>
-          </div>
-        </div>
-        <div>
-          <div className='navbar-item-div'>
-            <NavLink to='/' exact={true} activeClassName='active'>
-              {/* <i class="fa-solid fa-square-info"></i> */}
-              <i className="fa-solid fa-circle-info" style={{ fontSize: "25px" }}></i>
-              About
             </NavLink>
           </div>
         </div>

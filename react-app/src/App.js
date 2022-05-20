@@ -8,13 +8,14 @@ import { authenticate } from './store/session';
 import Home from './components/Home'
 import SplashPage from './components/SplashPage';
 import TweetsDetail from './components/Home/tweets-detail';
+import ProfileDetail from './components/Home/profile-details';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const user = useSelector(state => state.session.user)
   const dispatch = useDispatch();
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -29,20 +30,22 @@ function App() {
       {/* {user ? <NavBar /> : <></>} */}
       <Switch>
         <Route path='/' exact={true}>
-          { user ? <Redirect to="/home" /> : <SplashPage />}
+          {user ? <Redirect to="/home" /> : <SplashPage />}
         </Route>
         <ProtectedRoute path='/home' exact={true} >
           <Home />
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/chirps/:chirpId' exact={true} >
           <TweetsDetail />
-          {/* <Tweet /> */}
+        </ProtectedRoute>
+        <ProtectedRoute path='/profile/:userId' exact={true} >
+          <ProfileDetail />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
