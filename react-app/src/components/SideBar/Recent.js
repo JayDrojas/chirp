@@ -13,15 +13,13 @@ const Recent = () => {
         <h3>What's happening</h3>
       </div>
       <div>
-        <div id="right-tweet-content" className="each-tweet-right">
-          <h4>Damian Rojas</h4>
-          <p>My name is Damian and I created this twitter clone below are links to LinkedIn and github.</p>
-        </div>
         {randomTweets && randomTweets.map(tweet => (
           <Link className="link-tags" key={tweet.id} to={`/chirps/${tweet.id}`}>
             <div className="each-tweet-right">
-              <h4>{tweet.user.username}</h4>
-              <p>{tweet.content.length > 55 ? tweet.content.slice(0, 55) + "...": tweet.content}</p>
+              <div className="right-tweet-content">
+                <h4>{tweet.user.username}</h4>
+                <p>{tweet.content.length > 55 ? tweet.content.slice(0, 55) + "..." : tweet.content}</p>
+              </div>
             </div>
           </Link>
         ))}
