@@ -13,9 +13,13 @@ const DeleteReplyForm = ({ reply, close }) => {
   }
 
   return (
-    <div>
-      <button onClick={handleDeleteTweet}>Delete</button>
-      <button onClick={() => close()}>Cancel</button>
+    <div className="delete-tweet-div">
+      <div className="delete-tweet-info">
+        <h2>Delete Chirp Reply?</h2>
+        <p>This can’t be undone and it will be removed from your profile, the timeline of any accounts that follow you, and from Chirp search results. </p>
+        <button className="delete-chirp-bttn" onClick={handleDeleteTweet}>Delete</button>
+        <button className="delete-cancel-bttn" onClick={() => close()}>Cancel</button>
+      </div>
     </div>
   )
 }

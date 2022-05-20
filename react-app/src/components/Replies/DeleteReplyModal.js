@@ -7,16 +7,13 @@ const DeleteReplyModal = ({ reply }) => {
     <>
       <Popup
         trigger={<div className="button"> Delete Reply </div>}
+        className='delete-tweet'
         modal
         nested
       >
         {close => (
           <div className="modal">
-            <button className="close" onClick={close}>
-              &times;
-            </button>
-            <div className="header"> Delete Tweet </div>
-            <div className="content">
+            <div className="content" id='content-delete-tweet'>
               <DeleteReplyForm reply={reply} close={close} />
             </div>
           </div>
