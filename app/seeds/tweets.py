@@ -13,7 +13,7 @@ def seed_tweets():
     user_id=3, content='Real madrid is the worst team in the world! Visca el Barça!!!!!!!'
   )
   four = Tweet(
-    user_id=4, content='Chris I am so happy to announce that I have started working at Ride as a driver!', image='https://mychirpbucket.s3.amazonaws.com/3cec73495d0a490a9b45d3ece4a46eff.jpg'
+    user_id=4, content='I am so happy to announce that I have started working at Ride as a driver!', image='https://mychirpbucket.s3.amazonaws.com/3cec73495d0a490a9b45d3ece4a46eff.jpg'
   )
   five = Tweet(
     user_id=5, content='If you are bored after finals and have nothing to watch, I recommend silicon valley on HBO!'
