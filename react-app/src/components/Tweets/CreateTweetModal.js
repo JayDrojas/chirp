@@ -16,7 +16,7 @@ const CreateTweetModal = () => {
               &times;
             </button>
             <div className="header"> Create </div>
-            <div className="content">
+            <div className="content content-edit-tweet">
               <CreateTweetForm close={close} />
             </div>
           </div>

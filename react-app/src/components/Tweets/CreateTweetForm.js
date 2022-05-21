@@ -4,7 +4,7 @@ import { create_tweet } from "../../store/tweets";
 import './TweetForm.css'
 
 
-const CreateTweetForm = () => {
+const CreateTweetForm = ({close}) => {
   const dispatch = useDispatch()
   const [errors, setErrors] = useState([]);
   const [content, setContent] = useState('');
@@ -26,6 +26,10 @@ const CreateTweetForm = () => {
     const response = await dispatch(create_tweet(tweetData))
     if (response.errors) {
       return setErrors([response.errors])
+    }
+
+    if(close) {
+      return close()
     }
     setContent('')
     setErrors('')
