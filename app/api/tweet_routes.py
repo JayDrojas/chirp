@@ -71,7 +71,7 @@ def update_tweet(id):
 
   update_tweet = Tweet.query.get(id)
 
-  if not update_tweet.id == current_user.id:
+  if not update_tweet.user_id == current_user.id:
     return {'error': ['Can only update chirps that are owned by the user.']}
 
   if "image" not in request.files:
