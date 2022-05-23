@@ -6,7 +6,6 @@
 - [Main purpose](#main)
 - [Tweets](#tweets)
 - [Replies](#replies)
-- [Conclusion](#conclusion)
 
 ## Main
 
