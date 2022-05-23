@@ -68,7 +68,8 @@
 6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
   
 ## Tweets
+![image](https://user-images.githubusercontent.com/86801740/169848226-01b47bd7-6108-4d5c-9cc5-6ebfb503907b.png)
 
 ## Replies
+![image](https://user-images.githubusercontent.com/86801740/169848345-fdf18e3b-51b9-4f56-89dd-2ca48e6b55d4.png)
 
-## Conclusion
