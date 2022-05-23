@@ -1,11 +1,18 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { get_all_tweets } from "../../store/tweets";
 import { RandomTweets } from "./utils";
 
 const Recent = () => {
+  const dispatch = useDispatch()
   const tweets = useSelector(store => Object.values(store.tweets))
   const user = useSelector(store => store.session.user)
   const randomTweets = RandomTweets(tweets, user)
+
+  useEffect(() => {
+    dispatch(get_all_tweets())
+  }, [dispatch])
 
   return (
     <div className="happening-div">
