@@ -106,9 +106,10 @@ def update_tweet(id):
 def delete_tweet(id):
   tweet = Tweet.query.get(id)
 
-  if tweet and tweet.id == current_user.id:
+  if tweet and tweet.user_id == current_user.id:
     db.session.delete(tweet)
     db.session.commit()
+
     return 'Success'
   else: return 'Error deleting Chirp.'
 
