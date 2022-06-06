@@ -28,7 +28,7 @@ const Tweets = () => {
             <div className="tweet-actions-container">
               <div className="tweet-action-div">
                 <div className="tweet-user-info-div">
-                  <p><span>{tweet.user.first_name}</span> @{tweet.user.username}</p>
+                  <p><span>{tweet?.user.first_name}</span> @{tweet?.user.username}</p>
                 </div>
                 {user?.id === tweet?.user_id && (
                   <div>

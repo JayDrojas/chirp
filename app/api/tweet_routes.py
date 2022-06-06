@@ -71,7 +71,7 @@ def update_tweet(id):
 
   update_tweet = Tweet.query.get(id)
 
-  if not update_tweet.id == current_user.id:
+  if not update_tweet.user_id == current_user.id:
     return {'error': ['Can only update chirps that are owned by the user.']}
 
   if "image" not in request.files:
@@ -106,9 +106,10 @@ def update_tweet(id):
 def delete_tweet(id):
   tweet = Tweet.query.get(id)
 
-  if tweet and tweet.id == current_user.id:
+  if tweet and tweet.user_id == current_user.id:
     db.session.delete(tweet)
     db.session.commit()
+
     return 'Success'
   else: return 'Error deleting Chirp.'
 
