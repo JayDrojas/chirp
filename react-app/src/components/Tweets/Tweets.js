@@ -27,9 +27,11 @@ const Tweets = () => {
             </div>
             <div className="tweet-actions-container">
               <div className="tweet-action-div">
-                <div className="tweet-user-info-div">
-                  <p><span>{tweet?.user.first_name}</span> @{tweet?.user.username}</p>
-                </div>
+                <Link to={`/profile/${tweet?.user_id}`}>
+                  <div className="tweet-user-info-div">
+                    <p><span>{tweet?.user.first_name}</span> @{tweet?.user.username}</p>
+                  </div>
+                </Link>
                 {user?.id === tweet?.user_id && (
                   <div>
                     <TweetBurger tweet={tweet} />
