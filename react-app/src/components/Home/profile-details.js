@@ -1,5 +1,6 @@
 import NavBar from '../NavBar';
 import Profile from '../Profile/Profile';
+import SideBar from '../SideBar';
 import './index.css';
 
 const ProfileDetail = () => {
@@ -8,12 +9,11 @@ const ProfileDetail = () => {
       <div className='left-container'>
         <NavBar />
       </div>
-      {/* <CreateTweetForm /> */}
       <div className='center-container'>
         <Profile />
       </div>
       <div className='right-container'>
-        placeholder
+        <SideBar />
       </div>
     </div>
 

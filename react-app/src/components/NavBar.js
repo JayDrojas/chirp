@@ -26,14 +26,14 @@ const NavBar = () => {
             </NavLink>
           </div>
         </div>
-        {/* <div>
+        <div>
           <div className='navbar-item-div'>
             <NavLink to={`/profile/${user?.id}`} exact={true} activeClassName='active'>
               <i className="fa-solid fa-user" style={{ fontSize: "25px" }}></i>
               Profile
             </NavLink>
           </div>
-        </div> */}
+        </div>
         <div className='bottom-navbar'>
           <div>
             <CreateTweetModal />

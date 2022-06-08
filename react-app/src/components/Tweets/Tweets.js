@@ -6,20 +6,20 @@ import CreateTweetForm from "./CreateTweetForm"
 import './tweets.css'
 import TweetBurger from "./TweetBurger";
 
-const Tweets = () => {
-  const dispatch = useDispatch()
-  const tweets = useSelector(store => Object.values(store.tweets))
+const Tweets = ({tweets, needForm}) => {
+  // const dispatch = useDispatch()
+  // const tweets = useSelector(store => Object.values(store.tweets))
   const user = useSelector(store => store.session.user)
 
-  useEffect(() => {
-    dispatch(get_all_tweets())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(get_all_tweets())
+  // }, [dispatch])
 
 
   return (
     <div id="tweets-container">
-      <h1>Home</h1>
-      <CreateTweetForm />
+      {needForm && <h1>Home</h1>}
+      {needForm && <CreateTweetForm />}
       {tweets && tweets.sort((tweet1, tweet2) => tweet2?.id - tweet1?.id).map(tweet => (
         <div key={tweet?.id} className="tweet-container">
           <div className="tweet-div">
@@ -49,7 +49,6 @@ const Tweets = () => {
               </Link>
             </div>
           </div>
-          {/* </Link> */}
         </div>
       ))
       }

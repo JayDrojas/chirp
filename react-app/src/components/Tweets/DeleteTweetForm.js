@@ -10,7 +10,13 @@ const DeleteTweetForm = ({ tweet, close }) => {
     e.preventDefault()
 
     dispatch(delete_one_tweet(tweet))
-    return history.push('/home')
+    // return history.go(0)
+    // console.log(window.location.href) // http://localhost:3000/home
+    if (window.location.href.includes('profile')) {
+      return close()
+    } else {
+      return history.push('/home')
+    }
   }
 
   return (

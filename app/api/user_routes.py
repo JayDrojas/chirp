@@ -1,3 +1,4 @@
+import email
 from flask import Blueprint, jsonify
 from flask_login import login_required
 from app.models import User, Tweet
@@ -25,8 +26,7 @@ def profile(id):
     tweets = []
     for tweet in tweetsList:
         result = tweet.to_dict()
-        # print(result['user'])
-        del result['user']
+        del result['user']['email']
         tweets.append(result)
     resultUser = user.to_dict()
     resultUser['tweets'] = tweets
