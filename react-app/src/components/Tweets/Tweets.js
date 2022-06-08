@@ -1,7 +1,7 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+// import { useEffect } from "react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { get_all_tweets } from "../../store/tweets"
+// import { get_all_tweets } from "../../store/tweets"
 import CreateTweetForm from "./CreateTweetForm"
 import './tweets.css'
 import TweetBurger from "./TweetBurger";
