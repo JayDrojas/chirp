@@ -1,6 +1,7 @@
+import email
 from flask import Blueprint, jsonify
 from flask_login import login_required
-from app.models import User
+from app.models import User, Tweet
 
 user_routes = Blueprint('users', __name__)
 
@@ -17,6 +18,19 @@ def users():
 def user(id):
     user = User.query.get(id)
     return user.to_dict()
+
+@user_routes.route('/profile/<int:id>')
+def profile(id):
+    user = User.query.get(id)
+    tweetsList = Tweet.query.filter(Tweet.user_id == id).all()
+    tweets = []
+    for tweet in tweetsList:
+        result = tweet.to_dict()
+        del result['user']['email']
+        tweets.append(result)
+    resultUser = user.to_dict()
+    resultUser['tweets'] = tweets
+    return resultUser
 
 @user_routes.errorhandler(500)
 def internal_server_error(e):

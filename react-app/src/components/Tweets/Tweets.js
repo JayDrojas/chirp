@@ -6,20 +6,20 @@ import CreateTweetForm from "./CreateTweetForm"
 import './tweets.css'
 import TweetBurger from "./TweetBurger";
 
-const Tweets = () => {
-  const dispatch = useDispatch()
-  const tweets = useSelector(store => Object.values(store.tweets))
+const Tweets = ({tweets, needForm}) => {
+  // const dispatch = useDispatch()
+  // const tweets = useSelector(store => Object.values(store.tweets))
   const user = useSelector(store => store.session.user)
 
-  useEffect(() => {
-    dispatch(get_all_tweets())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(get_all_tweets())
+  // }, [dispatch])
 
 
   return (
     <div id="tweets-container">
-      <h1>Home</h1>
-      <CreateTweetForm />
+      {needForm && <h1>Home</h1>}
+      {needForm && <CreateTweetForm />}
       {tweets && tweets.sort((tweet1, tweet2) => tweet2?.id - tweet1?.id).map(tweet => (
         <div key={tweet?.id} className="tweet-container">
           <div className="tweet-div">
@@ -27,9 +27,11 @@ const Tweets = () => {
             </div>
             <div className="tweet-actions-container">
               <div className="tweet-action-div">
-                <div className="tweet-user-info-div">
-                  <p><span>{tweet?.user.first_name}</span> @{tweet?.user.username}</p>
-                </div>
+                <Link to={`/profile/${tweet?.user_id}`}>
+                  <div className="tweet-user-info-div">
+                    <p><span>{tweet?.user.first_name}</span> @{tweet?.user.username}</p>
+                  </div>
+                </Link>
                 {user?.id === tweet?.user_id && (
                   <div>
                     <TweetBurger tweet={tweet} />
@@ -47,7 +49,6 @@ const Tweets = () => {
               </Link>
             </div>
           </div>
-          {/* </Link> */}
         </div>
       ))
       }

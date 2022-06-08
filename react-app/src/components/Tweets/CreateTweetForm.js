@@ -59,7 +59,7 @@ const CreateTweetForm = ({close}) => {
           <div className="errors-container">
             {errors.length > 0 && (
               errors.map(error => (
-                <p>{error}</p>
+                <p key={error}>{error}</p>
               ))
             )}
           </div>
